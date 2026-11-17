@@ -223,10 +223,14 @@ def joint_multi_weight_lm(e, A_list):
     """Omnibus and robust partial LM-error tests of H0: lambda = 0.
 
     Score g_s = (e' A_s e) / sigma_hat^2 with sigma_hat^2 = e'e / n, and
-    Fisher information I_rs = tr((A_r + A_r') A_s). The joint statistic is
-    g' I^{-1} g on chi^2_{k'}. Each partial statistic is the squared
-    information-orthogonalized score divided by the corresponding diagonal
-    of I^{-1}, referred to chi^2_1 (Anselin, 1988; Anselin et al., 1996).
+    Fisher information I_rs = tr((A_r + A_r') A_s). For any row-standardized
+    layer, S_r = A_r + A_r' is symmetric, so
+    tr(S_r A_s') = tr(A_s S_r') = tr(S_r A_s). Therefore
+    I_rs = (1/2) tr((A_r + A_r')(A_s + A_s')) = 2 tr(A_r* A_s*),
+    where A* = (A + A') / 2. The two expressions are the same matrix.
+    The joint statistic is g' I^{-1} g on chi^2_{k'}. Each partial statistic
+    is the squared information-orthogonalized score divided by the corresponding
+    diagonal of I^{-1}, referred to chi^2_1 (Anselin, 1988; Anselin et al., 1996).
     """
     e = np.asarray(e, dtype=float).reshape(-1)
     A_list = [np.asarray(A, dtype=float) for A in A_list]

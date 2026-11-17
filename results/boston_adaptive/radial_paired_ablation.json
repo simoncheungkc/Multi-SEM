@@ -1,0 +1,29 @@
+{
+  "n_splits": 28,
+  "mean_stored_rmse": 0.13443576799081083,
+  "mean_rmse_four": 0.13443576799081083,
+  "mean_rmse_three_operator": 0.13439720149178427,
+  "mean_paired_rmse_diff_four_minus_three": 3.8566499026569866e-05,
+  "max_abs_four_vs_stored": 0.0,
+  "nadeau_bengio": {
+    "name": "four-layer minus radial-deleted predictor",
+    "R": 28,
+    "n_t": 405,
+    "n_star": 101,
+    "correction_factor": 0.2850970017636684,
+    "mean_mse_reduction": -1.0145103555148306e-05,
+    "variance_d": 7.843105056758986e-10,
+    "se_corrected": 1.4953413443757426e-05,
+    "t": -0.6784473386833,
+    "df": 27,
+    "p": 0.5032620285676603,
+    "ci95": [
+      -4.0826973584596336e-05,
+      2.053676647429972e-05
+    ],
+    "wins": 12,
+    "ties": 1,
+    "losses": 16
+  },
+  "note": "The three-operator predictor uses the archived four-layer posterior means with the radial coefficient removed. It is not a refitted three-layer posterior."
+}

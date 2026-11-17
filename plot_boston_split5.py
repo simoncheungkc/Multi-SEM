@@ -14,8 +14,9 @@ import run_boston as rb
 ROOT = Path(__file__).resolve().parent
 # Reported chains live in the adaptive archive. The scatter is a diagnostic figure.
 JSON_DIR = Path(os.environ.get("BOSTON_RESULTS", ROOT / "results" / "boston_adaptive"))
-FIG_DIR = ROOT / "results" / "boston"
-OUTS = [FIG_DIR / "boston_split5_pred_vs_actual.png"]
+FIG_DIR = JSON_DIR
+OUT_SCATTER = FIG_DIR / "boston_split5_pred_vs_actual.png"
+OUT_S9 = FIG_DIR / "figure_s9.png"
 
 
 def split_predictions(split_id: int = 5):
@@ -48,7 +49,41 @@ def split_predictions(split_id: int = 5):
         np.asarray(record["multi"]["beta"], dtype=float),
         [built["adjacency"][name] for name in names],
     )
-    return y_test, ols_hat, multi_hat, record
+    return y_test, ols_hat, multi_hat, record, test
+
+
+def write_figure_s9(data, y_test, yhat, test):
+    """Supplementary Figure S9: municipal centroids and the split-5 holdout residual."""
+    xy = data["xy"]
+    fig, axes = plt.subplots(1, 2, figsize=(10.2, 4.6))
+    axes[0].scatter(xy[:, 0], xy[:, 1], c=data["town_id"], s=12, cmap="nipy_spectral", linewidths=0)
+    axes[0].set_title("Tract centroids by municipality")
+    axes[0].set_xlabel("UTM easting (m)")
+    axes[0].set_ylabel("UTM northing (m)")
+    axes[0].set_aspect("equal")
+    residual = y_test - yhat
+    scale = max(float(np.max(np.abs(residual))), 1e-6)
+    sc = axes[1].scatter(
+        xy[test, 0],
+        xy[test, 1],
+        c=residual,
+        s=28,
+        cmap="coolwarm",
+        vmin=-scale,
+        vmax=scale,
+        linewidths=0,
+    )
+    axes[1].set_title("Holdout residual, split 5")
+    axes[1].set_xlabel("UTM easting (m)")
+    axes[1].set_aspect("equal")
+    fig.colorbar(sc, ax=axes[1], fraction=0.046, pad=0.04, label="log value")
+    for ax in axes:
+        ax.tick_params(labelsize=8)
+    fig.tight_layout()
+    OUT_S9.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(OUT_S9, dpi=160)
+    plt.close(fig)
+    print(f"wrote {OUT_S9}")
 
 
 def main():
@@ -58,7 +93,7 @@ def main():
         rmses.append((int(row["split"]), float(row["multi"]["RMSE"])))
     ordered = sorted(rmses, key=lambda item: item[1])
     median_split, median_rmse = ordered[len(ordered) // 2]
-    y, ols_hat, multi_hat, record = split_predictions(5)
+    y, ols_hat, multi_hat, record, test = split_predictions(5)
     m_ols = rb.metrics_rmse_mae(y, ols_hat)
     m_multi = rb.metrics_rmse_mae(y, multi_hat)
     if abs(m_ols["RMSE"] - record["ols"]["RMSE"]) > 1e-8:
@@ -98,11 +133,11 @@ def main():
         )
     fig.suptitle("Boston housing holdout, split 5 (n* = 101)", fontsize=10)
     fig.tight_layout()
-    for path in OUTS:
-        path.parent.mkdir(parents=True, exist_ok=True)
-        fig.savefig(path, dpi=200)
-        print(f"wrote {path}")
+    OUT_SCATTER.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(OUT_SCATTER, dpi=200)
+    print(f"wrote {OUT_SCATTER}")
     plt.close(fig)
+    write_figure_s9(rb.load_boston(), y, multi_hat, test)
     print(f"median multi RMSE split {median_split} value {median_rmse:.6f}")
     print(f"split 5 OLS {m_ols['RMSE']:.6f} corr {m_ols['corr']:.6f}")
     print(f"split 5 multi {m_multi['RMSE']:.6f} corr {m_multi['corr']:.6f}")

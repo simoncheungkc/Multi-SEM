@@ -264,6 +264,10 @@ class LatexParser:
             return self.parse_nary("∏")
         if cmd == "infty":
             return run("∞")
+        if cmd == "cup":
+            return run("∪")
+        if cmd == "cap":
+            return run("∩")
         if cmd == "quad":
             return run("    ")
         if cmd == "qquad":
