@@ -5,8 +5,16 @@ __pycache__/
 *.pem
 credentials.json
 
-# Confidential incoming peer-review documents
-Referee Report.pdf
-Referee Report.docx
-Review report.pdf
-Review report.docx
+# Manuscripts, supplements, letters, and other written reports
+*.docx
+*.pdf
+*.tex
+REPORT.md
+archive (2)/
+results/_supp_extract.txt
+Algorithm1_Screening_Pruning.jpg
+Algorithm2_Gibbs_Sampler.jpg
+Algorithm3_Predictive_Sampling.jpg
+Candidate_Parameter_Check.jpg
+Kriging_Architecture.jpg
+Standard_Normal_Rejection_Region.jpg
