@@ -15,10 +15,10 @@ from docx.shared import Inches, Pt, RGBColor
 
 from build_v10_docx import omath
 from build_v12_docx import blocks_from
-from run_boston import LAYER_LABELS, OUT_DIR, load_boston
+from run_boston import LAYER_LABELS, load_boston
 
 ROOT = Path(__file__).resolve().parent
-RESULTS = Path(os.environ.get("BOSTON_RESULTS", str(OUT_DIR)))
+RESULTS = Path(os.environ.get("BOSTON_RESULTS", str(ROOT / "results" / "boston_adaptive")))
 OUT = ROOT / (
     "Boston_Housing_MultiSEM_v4.docx" if RESULTS.name == "boston_adaptive" else "Boston_Housing_MultiSEM_v3.docx"
 )
@@ -557,10 +557,14 @@ def main():
             "The holdout numbers in Table 4 use those posterior means as they stand. They are not replaced by a longer run or by maximum likelihood."
         )
     add_mixed(doc, screened_text)
+    try:
+        shown = RESULTS.resolve().relative_to(ROOT).as_posix()
+    except ValueError:
+        shown = RESULTS.as_posix()
     add_mixed(
         doc,
-        "Replication. run_boston.py reads data/boston_corrected.txt, writes results/boston/split_00.json through split_49.json, and writes results/boston/summary.json. "
-        "The master seed is 2026. Each spatial fit uses GibbsConfig with 6,000 iterations, 3,000 burn-in draws, and four chains.",
+        f"Replication. run_boston.py --adaptive reads data/boston_corrected.txt and writes {shown}/split_00.json through split_49.json and {shown}/summary.json. "
+        f"The master seed is 2026. The reported fits use four chains, {summary.get('gibbs', {}).get('n_iter', 8000):,} iterations, {summary.get('gibbs', {}).get('burn', 4000):,} burn-in draws, and adapt_covariance=True.",
         size=11,
     )
     add_mixed(doc, "References", style="Heading 1", size=14, bold=True)
