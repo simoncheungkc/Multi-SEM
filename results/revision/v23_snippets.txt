@@ -1,0 +1,42 @@
+[13]
+Tobler's first law characterizes spatial dependence through continuous distance decay, whereby nearby observations tend to be more strongly related than distant ones (Tobler, 1970). Yet administrative, legal, and functional boundaries often intersect with this geographic gradient. A residential property in Greater Boston has contiguous geographic neighbours, but also belongs to a municipal jurisdiction that determines property tax assessment, zoning bylaws, and public school provision (Harrison and Rubinfeld, 1978; Gilley and Pace, 1996). Similarly, a publicly traded firm belongs to an industry group while also being linked to corporate peers through return co-movement. Standard spatial regressions traditionally condition on a single weight matrix  (Bivand et al., 2014; Bivand and Wong, 2018). A single spatial operator cannot simultaneously accommodate these distinct relational channels. Multi-SEM resolves this limitation by testing, screening, and combining candidate weight matrices within a unified model while enforcing a uniform sufficient condition for invertibility of the spatial filter.
+
+====
+
+[14]
+Higher-order spatial autoregressive and spatial-error models have been studied since Anselin (1988) and Lacombe (2004). Empirical practice nevertheless remains dominated by the selection of a single weight matrix . Weight-matrix uncertainty has been treated by Bayesian model averaging (LeSage and Fischer, 2008; Piribauer and Crespo Cuaresma, 2016) and by penalized selection (Lam and Souza, 2020). Multi-SEM is an alternative pipeline: ex-ante structural pruning, design-conditional screening, -constrained Bayesian estimation, and precision-domain spatial interpolation. Section 2.1 places that pipeline in the higher-order literature.
+
+====
+
+[28]
+Higher-order spatial autoregressive and spatial-error specifications have been part of the classical toolkit since Anselin (1988). Lacombe (2004) showed that conclusions about a substantive spatial effect can change when the specification moves beyond a single weight matrix, and Lee and Liu (2010) gave efficient GMM theory for high-order spatial models with autoregressive disturbances. Recent empirical practice nevertheless remains dominated by the selection of one matrix . Weight-matrix uncertainty has been addressed by Bayesian model averaging (LeSage and Fischer, 2008; Piribauer and Crespo Cuaresma, 2016) and by penalized selection (Lam and Souza, 2020). Multi-SEM does not claim a new mathematical model class. It provides one reproducible pipeline that combines ex-ante structural pruning, design-conditional screening, -constrained Bayesian estimation, and precision-domain spatial interpolation.
+
+====
+
+[29]
+Bayesian model averaging across weight matrices (LeSage and Fischer, 2008; Piribauer and Crespo Cuaresma, 2016) treats competing matrices under a model-selection assumption in which one network is the true generator. Multi-SEM instead models coexisting, overlapping dependence channels together, through one additive disturbance.
+
+====
+
+[728]
+Screened Multi-SEM with precision kriging achieves a mean holdout RMSE of 0.1375, compared with 0.1921 for OLS, a 28.5% reduction. Multi-SEM achieves a lower RMSE than OLS on 50 of 50 splits. The Nadeau and Bengio (2003) corrected resampled test, which accounts for training overlap by inflating the variance of the mean loss gap by , yields ,  (corrected 95% interval ). Against the single-layer geographic SEM (0.1403), Multi-SEM achieves an incremental 2.0% RMSE reduction and wins on 37 of 50 splits. The corrected resampled test gives ,  (corrected 95% interval ). The split-level win count is 37 of 50. The corrected confidence interval for the mean squared-error gap spans zero.
+
+====
+
+[729]
+Supplementary Table S9 isolates the candidate layers on the same 50 splits. The geographic SEM alone has mean RMSE 0.1403. The resolvent alone, a higher-order filter on that graph, has mean RMSE 0.1377. Geographic contiguity together with municipal boundaries, , lowers mean RMSE to 0.1384 and has the lower RMSE on 33 of 50 splits, without the resolvent. Geography together with the resolvent has mean RMSE 0.1383. Screened Multi-SEM has the lowest mean RMSE, 0.1375. Municipal boundaries change holdout error relative to the geographic SEM alone. They do not account for more of that point estimate than the resolvent filter. None of these contrasts with the geographic SEM is significant at the 5% level after the Nadeau–Bengio correction. The smallest such -value is 0.060, for geography plus the resolvent.
+
+====
+
+[730]
+The same conclusion is in Table S9: the municipal increment and the resolvent increment are both visible in the point estimates, and the corrected intervals against the geographic SEM include zero.
+
+====
+
+[784]
+The four archived -values do not lie on the Monte Carlo grid , because the archived screening routine reports the Gaussian tail. For the correlation, resolvent, and sector layers,  and , so the Gaussian tail is also the operational -value. The industry layer has , however, so Algorithm 1 would replace the reported Gaussian value  with a  conditional Gaussian Monte Carlo probability before FDR control. The operational rule therefore calls for a conditional Monte Carlo probability before FDR control. The Monte Carlo probability was not stored with the August archive, so the reported  remains the archived Gaussian-tail value.
+
+====
+
+[819]
+Table 10. Residual Moran's  for the August 2026 showcase. The archived screen used all  equities, before the 80/20 split ().  is the maximum degree divided by the mean degree on the off-diagonal adjacency.  is the leading singular-value share of the row-standardized matrix. The -values are the analytical Gaussian tails stored by the screening routine.

@@ -1,0 +1,3 @@
+setting,network,n,n_reps,B,gaussian_reject_rate,bootstrap_reject_rate,mean_gaussian_p,mean_bootstrap_p
+H0,Power-law gamma=2.2,100,500,499,0.116,0.062,0.4378783461286018,0.48577599999999993
+H1,Power-law gamma=2.2,100,500,499,0.734,0.632,0.07041036131745844,0.095304

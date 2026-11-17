@@ -1,0 +1,13 @@
+df37ad64e2ad38d5642d72681704e625625b377234ba6ffdda977be47014d339  run_simulation.py  # Tables 2, 3, 4, 4b, 5; Figures for Moran size/power, Gibbs traces, OOS RMSE
+9e3e88be1d41ade237b26e09ad8ad473ee9effaf466d96d53a61351d11dbf146  run_boston.py  # Tables 6-9 and Boston split archives; reads data/boston_corrected.txt
+695c5397b367a72c22116e38502ac5d1d37b4aa2b9e9d265126a15f9e6d001a4  run_sp100.py  # Tables 10-13; missing snapshot raises FileNotFoundError unless --download
+0aea874da1a28bee99f37919024147cfcd1bfccb7889d61f6e1ad970091a9f80  run_all.py  # Calls run_simulation.py, run_boston.py --adaptive, run_sp100.py on the offline snapshot, and run_joint_lm.py
+e598b6aa0076ac7ea1eebb2e9e1d8ebea37e585ff630251af5667d408dfe3736  run_unified_revision.py  # Tables 4c, S12, S13, S14 and Figure S11
+154ba7ba3a6de6090bb117c655c099eebfded9027d3406449a00856c2f87817e  run_all_unified.py  # Recomputes Tables 4, 4a, 5 and S&P, then Experiments A-D
+617829b3e68700ad792923c4dd9ffba78e11427e1e2b3c5748c04d292c9df080  run_revision_diagnostics.py  # Table 4a Monte Carlo recovery, including network ESS
+75c9483a4ffb67891cb006addff96fca9cb7cb7511d5862240595b3974f036fe  run_table4a_long.py  # Extends replications with split-R-hat above 1.05 and records minimum ESS
+8f3a9f00f35e920639bcb425ada54214d33bc9ea99e049b00a2016c4a7d590e8  run_table_s4_prior.py  # Table S4 prior grid, including the radial Beta(1, 2) prior
+101bb5930cbe4eac35a79ddac0d7da5bf6d7643e5cfe50c56ec07f5d60ed3a8a  run_joint_lm.py  # Table S16 joint and robust partial LM diagnostics
+3d2d95f2a3630a70e3c7810c66988cc26c2fe3f113e3c8c1a021d2582ea2d3e9  plot_boston_split5.py  # Reads results/boston_adaptive JSON and writes results/boston/boston_split5_pred_vs_actual.png
+64f909740ed6a5458a6af152d94b5e77b36caa6f96618b8f14a166b4623d039a  data/boston_corrected.txt
+b92f067365a0606c264fd5bb4891e100d04655e7ccc5f44244ee163ef6e254dd  data/sp100_clean_snapshot.csv

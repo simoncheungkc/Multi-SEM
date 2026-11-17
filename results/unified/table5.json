@@ -1,0 +1,22 @@
+{
+  "means": {
+    "OLS_RMSE": 1.0888820891392983,
+    "OLS_MAE": 0.8600449973276397,
+    "MultiSEM_RMSE": 0.9982100919417942,
+    "MultiSEM_MAE": 0.7948877826155542,
+    "SelectedSEM_RMSE": 1.0329444190408894,
+    "SelectedSEM_MAE": 0.8194434709338875,
+    "Single[Poisson d=8]_RMSE": 1.0559609106415195,
+    "Single[Poisson d=8]_MAE": 0.8419267711118851,
+    "Single[Power-law gamma=2.2]_RMSE": 1.033304515784954,
+    "Single[Power-law gamma=2.2]_MAE": 0.8194931318842811,
+    "Single[Power-law gamma=2.5]_RMSE": 1.0931729924099607,
+    "Single[Power-law gamma=2.5]_MAE": 0.8624461719335446,
+    "Single[Power-law gamma=3.0]_RMSE": 1.0968454491759658,
+    "Single[Power-law gamma=3.0]_MAE": 0.8662022035972119,
+    "Single[Poisson d=4 (null)]_RMSE": 1.0889512866097064,
+    "Single[Poisson d=4 (null)]_MAE": 0.8613991875886631
+  },
+  "elapsed_sec": 348.2506859302521,
+  "adapt_covariance": true
+}

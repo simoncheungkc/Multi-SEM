@@ -1,0 +1,209 @@
+{
+  "table4": {
+    "P_positive": [
+      0.9951666666666666,
+      1.0,
+      0.5065,
+      0.8549166666666667,
+      0.8885833333333333
+    ],
+    "L_mean": 0.8715530472010553,
+    "L_p95": 0.9873603791828971,
+    "P_L_gt_095": 0.2569166666666667,
+    "L_max": 0.9998901394415023,
+    "n_draws": 12000,
+    "names": [
+      "Poisson d=8",
+      "Power-law gamma=2.2",
+      "Power-law gamma=2.5",
+      "Power-law gamma=3.0",
+      "Poisson d=4 (null)"
+    ],
+    "elapsed_sec": 31.492998600006104,
+    "means": [
+      0.30934942170398516,
+      0.3232218240311119,
+      0.0010707395860265296,
+      0.07423741391017376,
+      0.09264219028085911,
+      -0.12582768803953692,
+      -0.3416554363733434,
+      0.4789954018914197,
+      -0.18193654173480878,
+      0.22633608770434238,
+      0.0905140246962985,
+      1.164603521660546
+    ],
+    "published_means": [
+      0.3315528410094193,
+      0.3367187513194026,
+      -0.0307500726884901,
+      0.0819255395297508,
+      0.101290818217316,
+      -0.0917227243199503,
+      -0.3446276185535102,
+      0.482551155961185,
+      -0.1840024486569096,
+      0.2271019340636031,
+      0.089956770771604,
+      1.1603377635206586
+    ],
+    "mean_abs_diff": 0.03410496371958663
+  },
+  "table7": {
+    "P_positive": [
+      0.868375,
+      0.9336875
+    ],
+    "L_mean": 0.4301937010631818,
+    "L_p95": 0.6612280820026464,
+    "P_L_gt_095": 0.00025,
+    "L_max": 0.9652096322643746,
+    "n_draws": 16000,
+    "names": [
+      "Sector affiliation",
+      "Industry (related companies)"
+    ],
+    "date": "2026-08-31",
+    "n_train": 80,
+    "elapsed_sec": 8.855846643447876,
+    "means": {
+      "Sector affiliation": 0.21160351851783366,
+      "Industry (related companies)": 0.18141609066914663,
+      "intercept": 0.02816959043237283,
+      "lag_ret": -0.004893143456486019,
+      "vol": 0.010461270921645635,
+      "mom12": -0.024896168938061326,
+      "log_price": 0.007211523304014802,
+      "sigma2": 0.004847361882247992
+    },
+    "published_means": {
+      "Sector affiliation": 0.2090851170566443,
+      "Industry (related companies)": 0.181494719404127,
+      "intercept": 0.0280245010355617,
+      "lag_ret": -0.0049115969679158,
+      "vol": 0.0106030318073372,
+      "mom12": -0.0249246401299989,
+      "log_price": 0.0071409841223182,
+      "sigma2": 0.0048515636068861
+    }
+  },
+  "bootstrap": {
+    "100": {
+      "reps": 500,
+      "B": 199,
+      "gaussian_size": 0.058,
+      "bootstrap_size": 0.036,
+      "gaussian_rejects": 29,
+      "bootstrap_rejects": 18
+    },
+    "200": {
+      "reps": 500,
+      "B": 199,
+      "gaussian_size": 0.092,
+      "bootstrap_size": 0.046,
+      "gaussian_rejects": 46,
+      "bootstrap_rejects": 23
+    },
+    "500": {
+      "reps": 500,
+      "B": 199,
+      "gaussian_size": 0.11,
+      "bootstrap_size": 0.064,
+      "gaussian_rejects": 55,
+      "bootstrap_rejects": 32
+    },
+    "elapsed_sec": 229.854656457901,
+    "gamma": 2.2,
+    "design": "one power-law graph and one standardized design per n; null Y = X beta + N(0,I); parametric residual bootstrap of the OLS fit"
+  },
+  "monte_carlo": {
+    "R": 200,
+    "n": 200,
+    "n_iter": 1600,
+    "burn": 800,
+    "n_chains": 2,
+    "elapsed_sec": 278.55724692344666,
+    "lambda": [
+      {
+        "parameter": "Poisson d=8",
+        "truth": 0.4,
+        "bias": -0.09566141623001262,
+        "rmse": 0.1387699647740123,
+        "coverage": 0.875
+      },
+      {
+        "parameter": "Power-law gamma=2.2",
+        "truth": 0.35,
+        "bias": -0.055617815886043705,
+        "rmse": 0.09971159948128482,
+        "coverage": 0.895
+      },
+      {
+        "parameter": "Power-law gamma=2.5",
+        "truth": 0.0,
+        "bias": -0.0027470883892697674,
+        "rmse": 0.06517184081283585,
+        "coverage": 0.96
+      },
+      {
+        "parameter": "Power-law gamma=3.0",
+        "truth": 0.0,
+        "bias": -0.0018223175628224733,
+        "rmse": 0.06575991127334524,
+        "coverage": 0.94
+      },
+      {
+        "parameter": "Poisson d=4 (null)",
+        "truth": 0.0,
+        "bias": -0.005593985402661071,
+        "rmse": 0.07867200466712435,
+        "coverage": 0.945
+      }
+    ],
+    "beta": [
+      {
+        "parameter": "intercept",
+        "truth": 0.1,
+        "bias": 0.011431016898412838,
+        "rmse": 0.31881980299545803,
+        "coverage": 0.9
+      },
+      {
+        "parameter": "x1",
+        "truth": -0.2,
+        "bias": 0.00549991990569203,
+        "rmse": 0.07595318390689726,
+        "coverage": 0.92
+      },
+      {
+        "parameter": "x2",
+        "truth": 0.4,
+        "bias": -0.001582889441193981,
+        "rmse": 0.06586525955551603,
+        "coverage": 0.97
+      },
+      {
+        "parameter": "x3",
+        "truth": -0.1,
+        "bias": -0.0043543642731383135,
+        "rmse": 0.07392974687045757,
+        "coverage": 0.935
+      },
+      {
+        "parameter": "x4",
+        "truth": 0.25,
+        "bias": -0.005170206835540341,
+        "rmse": 0.07449829701340444,
+        "coverage": 0.955
+      },
+      {
+        "parameter": "x5",
+        "truth": 0.15,
+        "bias": -0.001986463243501199,
+        "rmse": 0.06867433317819643,
+        "coverage": 0.955
+      }
+    ]
+  }
+}

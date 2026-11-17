@@ -1,0 +1,118 @@
+{
+  "n_splits": 50,
+  "table": [
+    {
+      "model": "OLS (no network)",
+      "mean_rmse": 0.19214103250544595,
+      "mean_mae": 0.14039028266421444,
+      "mean_corr": 0.8794650358162,
+      "wins_vs_ols": null,
+      "win_rate": null
+    },
+    {
+      "model": "Municipal fixed effects",
+      "mean_rmse": 0.15195739206805636,
+      "mean_mae": 0.10966191836487277,
+      "mean_corr": 0.9270517138468817,
+      "wins_vs_ols": 48,
+      "win_rate": 0.96
+    },
+    {
+      "model": "Single SEM (geographic 6-NN)",
+      "mean_rmse": 0.14030299892710268,
+      "mean_mae": 0.10070472713218774,
+      "mean_corr": 0.9380222718393381,
+      "wins_vs_ols": 49,
+      "win_rate": 0.98
+    },
+    {
+      "model": "Single SEM (town boundaries)",
+      "mean_rmse": 0.1499477737968465,
+      "mean_mae": 0.10971471931080558,
+      "mean_corr": 0.9282207836277544,
+      "wins_vs_ols": 50,
+      "win_rate": 1.0
+    },
+    {
+      "model": "Multi-SEM (no kriging)",
+      "mean_rmse": 0.20724519236781405,
+      "mean_mae": 0.1489736623198475,
+      "mean_corr": 0.861387236438164,
+      "wins_vs_ols": 4,
+      "win_rate": 0.08
+    },
+    {
+      "model": "Multi-SEM (screened, precision kriging)",
+      "mean_rmse": 0.13745452041759706,
+      "mean_mae": 0.09825990412403998,
+      "mean_corr": 0.9404083671173816,
+      "wins_vs_ols": 50,
+      "win_rate": 1.0
+    }
+  ],
+  "wilcoxon": {
+    "statistic": 0.0,
+    "pvalue": 1.7763568394002505e-15,
+    "n": 50
+  },
+  "mean_squared_error_diff": 0.018027590734272708,
+  "selection_counts": {
+    "geo": 50,
+    "resolvent": 50,
+    "town": 50,
+    "radial": 28
+  },
+  "empty_active_sets": 0,
+  "gaussian_tests": 125,
+  "monte_carlo_tests": 75,
+  "max_abs_z_gap_vs_package": 0.3373229843690453,
+  "convergence": {
+    "geo": {
+      "fits": 50,
+      "rhat_within_1_025": 50,
+      "max_rhat": 1.0055767026282696,
+      "min_ess_lambda": 2075.5629402617747,
+      "min_ess_beta": 9994.923227737687,
+      "mean_E_L": 0.7441368260302568,
+      "mean_P_L_gt_095": 0.0,
+      "acceptance_min": 0.291,
+      "acceptance_max": 0.46975
+    },
+    "town_sem": {
+      "fits": 50,
+      "rhat_within_1_025": 50,
+      "max_rhat": 1.0040465157513496,
+      "min_ess_lambda": 2174.298360341903,
+      "min_ess_beta": 9857.554358176707,
+      "mean_E_L": 0.6001165272161962,
+      "mean_P_L_gt_095": 0.0,
+      "acceptance_min": 0.295,
+      "acceptance_max": 0.475625
+    },
+    "multi": {
+      "fits": 50,
+      "rhat_within_1_025": 50,
+      "max_rhat": 1.0195564491535463,
+      "min_ess_lambda": 433.2913516324052,
+      "min_ess_beta": 2136.095875676705,
+      "mean_E_L": 0.885397821527802,
+      "mean_P_L_gt_095": 0.18095124999999995,
+      "acceptance_min": 0.293625,
+      "acceptance_max": 0.42625
+    }
+  },
+  "mean_seconds": 2702.2791354519923,
+  "unseen_holdout_tracts_mean": 4.92,
+  "master_seed": 2026,
+  "gibbs": {
+    "n_iter": 8000,
+    "burn": 4000,
+    "n_chains": 4,
+    "adapt_covariance": true,
+    "scaling": "(2.38^2/k) * empirical covariance + 1e-5 I",
+    "initial_isotropic_draws": 50
+  },
+  "standardization": "training-split mean and population standard deviation",
+  "response": "log(cmedv)",
+  "rm_transform": "level"
+}

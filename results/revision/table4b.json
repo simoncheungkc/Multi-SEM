@@ -1,0 +1,72 @@
+{
+  "n_reps": 200,
+  "n": 200,
+  "covariates": "intercept plus five i.i.d. standard normal regressors, column-standardized",
+  "lambda_truth": [
+    0.5,
+    -0.3,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "l1_norm": 0.8,
+  "signed_sum": 0.2,
+  "columns": [
+    {
+      "parameter": "Poisson d=8",
+      "truth": 0.5,
+      "mean_posterior_mean": 0.39395079128169164,
+      "bias": -0.10604920871830836,
+      "rmse": 0.14177900721349937,
+      "coverage_95": 0.91,
+      "max_rhat": 1.0260118299549417,
+      "coverage_mcse": 0.02023610634484806
+    },
+    {
+      "parameter": "Power-law gamma=2.2",
+      "truth": -0.3,
+      "mean_posterior_mean": -0.23423325212647783,
+      "bias": 0.06576674787352205,
+      "rmse": 0.10010127057648957,
+      "coverage_95": 0.915,
+      "max_rhat": 1.0367206712189014,
+      "coverage_mcse": 0.019719913792915014
+    },
+    {
+      "parameter": "Power-law gamma=2.5",
+      "truth": 0.0,
+      "mean_posterior_mean": 0.0008462201629345228,
+      "bias": 0.0008462201629345248,
+      "rmse": 0.060190960763620335,
+      "coverage_95": 0.975,
+      "max_rhat": 1.028996328277125,
+      "coverage_mcse": 0.011039701082909813
+    },
+    {
+      "parameter": "Power-law gamma=3.0",
+      "truth": 0.0,
+      "mean_posterior_mean": -0.0015771555083172956,
+      "bias": -0.001577155508317297,
+      "rmse": 0.06240464935620129,
+      "coverage_95": 0.97,
+      "max_rhat": 1.0250245842815386,
+      "coverage_mcse": 0.012062338081814825
+    },
+    {
+      "parameter": "Poisson d=4 (null)",
+      "truth": 0.0,
+      "mean_posterior_mean": 0.0006416465313216557,
+      "bias": 0.0006416465313216565,
+      "rmse": 0.0692778380923478,
+      "coverage_95": 0.975,
+      "max_rhat": 1.0422237062993824,
+      "coverage_mcse": 0.011039701082909813
+    }
+  ],
+  "gibbs": {
+    "n_iter": 6000,
+    "burn": 3000,
+    "n_chains": 4,
+    "adapt_covariance": true
+  }
+}

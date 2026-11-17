@@ -1,0 +1,48 @@
+{
+  "summary": {
+    "geo": {
+      "ols_mean_I": 0.442444369698594,
+      "ols_split5_I": 0.4491700660661864,
+      "filtered_mean_I": -0.021024468537300396,
+      "filtered_min_I": -0.0765938236337884,
+      "filtered_max_I": 0.007193790549317406,
+      "filtered_split5_I": -0.01221493122604108,
+      "filtered_split5_p": 0.7554823165259978,
+      "filtered_median_p": 0.6275408214246023,
+      "filtered_frac_p_gt_030": 0.8
+    },
+    "resolvent": {
+      "ols_mean_I": 0.4061006103658005,
+      "ols_split5_I": 0.40581791121331434,
+      "filtered_mean_I": -0.00986084633264244,
+      "filtered_min_I": -0.03695165340794904,
+      "filtered_max_I": 0.006164203068272555,
+      "filtered_split5_I": -0.0056063486279669976,
+      "filtered_split5_p": 0.8968691886489459,
+      "filtered_median_p": 0.788040665270024,
+      "filtered_frac_p_gt_030": 0.94
+    },
+    "town": {
+      "ols_mean_I": 0.44963819168245117,
+      "ols_split5_I": 0.478234696291382,
+      "filtered_mean_I": 0.009047659930728348,
+      "filtered_min_I": -0.021934564997552714,
+      "filtered_max_I": 0.04392540199778337,
+      "filtered_split5_I": 0.031414010941371556,
+      "filtered_split5_p": 0.36244825983762025,
+      "filtered_median_p": 0.7569287152835802,
+      "filtered_frac_p_gt_030": 0.92
+    },
+    "radial": {
+      "ols_mean_I": 0.01279276927509534,
+      "ols_split5_I": 0.009151418114902936,
+      "filtered_mean_I": 0.0013505801071668191,
+      "filtered_min_I": -0.006589864824182518,
+      "filtered_max_I": 0.009415885983446623,
+      "filtered_split5_I": -0.0037450022535511283,
+      "filtered_split5_p": 0.9000104676288766,
+      "filtered_median_p": 0.6844177390998522,
+      "filtered_frac_p_gt_030": 0.96
+    }
+  }
+}

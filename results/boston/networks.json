@@ -1,0 +1,120 @@
+{
+  "n": 506,
+  "towns": 92,
+  "cmedv_min": 5.0,
+  "cmedv_max": 50.0,
+  "utm_x_range": [
+    310852.26679674524,
+    350236.0547698261
+  ],
+  "utm_y_range": [
+    4654767.197954819,
+    4693945.043489776
+  ],
+  "kept": [
+    "geo",
+    "resolvent",
+    "town",
+    "radial"
+  ],
+  "dropped": [],
+  "correlation": {
+    "geo__resolvent": 0.9748878012837039,
+    "geo__town": 0.5233633793362952,
+    "geo__radial": 0.19203318281391354,
+    "resolvent__town": 0.5410042066404873,
+    "resolvent__radial": 0.21143926269297472,
+    "town__radial": 0.2655629205181587
+  },
+  "clique_check": {
+    "town_size": 30,
+    "max_abs_gap": 1.3877787807814457e-17
+  },
+  "layers": {
+    "geo": {
+      "edges": 1858,
+      "isolates": 0,
+      "s0": 506.0,
+      "mean_binary_degree": 7.3438735177865615,
+      "max_binary_degree": 12,
+      "kappa_row_sum": 3.750908013260321,
+      "psi": 0.0063774807374906385
+    },
+    "resolvent": {
+      "edges": 127765,
+      "isolates": 0,
+      "s0": 506.0,
+      "mean_binary_degree": 505.0,
+      "max_binary_degree": 505,
+      "kappa_row_sum": 1.046210828491291,
+      "psi": 0.008911354859567523
+    },
+    "town": {
+      "edges": 2434,
+      "isolates": 17,
+      "s0": 489.0,
+      "mean_binary_degree": 9.620553359683795,
+      "max_binary_degree": 29,
+      "kappa_row_sum": 3.0143796220213637,
+      "psi": 0.00666666666666667,
+      "groups": 92,
+      "singleton_groups": 17,
+      "largest_group": 30
+    },
+    "radial": {
+      "edges": 23102,
+      "isolates": 0,
+      "s0": 506.0,
+      "mean_binary_degree": 91.31225296442688,
+      "max_binary_degree": 131,
+      "kappa_row_sum": 1.4346376937061727,
+      "psi": 0.05555555555555561,
+      "groups": 9,
+      "singleton_groups": 0,
+      "largest_group": 132
+    }
+  },
+  "within_town_variation": {
+    "rm": {
+      "towns_with_variation": 75
+    },
+    "age": {
+      "towns_with_variation": 74
+    },
+    "crim": {
+      "towns_with_variation": 75
+    },
+    "zn": {
+      "towns_with_variation": 0
+    },
+    "indus": {
+      "towns_with_variation": 0
+    },
+    "log_lstat": {
+      "towns_with_variation": 75
+    },
+    "tax": {
+      "towns_with_variation": 0
+    },
+    "ptratio": {
+      "towns_with_variation": 0
+    },
+    "nox": {
+      "towns_with_variation": 12
+    },
+    "log_dis": {
+      "towns_with_variation": 51
+    }
+  },
+  "rad_values": {
+    "1": 20,
+    "2": 24,
+    "3": 38,
+    "4": 110,
+    "5": 115,
+    "6": 26,
+    "7": 17,
+    "8": 24,
+    "24": 132
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "jacobian": "(1-k) ln L + ln(1-L)",
+  "rho": {
+    "reps": 200,
+    "rho_mean": 0.6934928328276853,
+    "rho_max": 0.7410805067689934,
+    "rho_lt_1": 200
+  },
+  "connectivity": {
+    "connected_clusters": 9,
+    "clusters": [
+      {
+        "cluster": 0,
+        "n": 44,
+        "components": 1,
+        "largest": 44,
+        "connected": true
+      },
+      {
+        "cluster": 1,
+        "n": 26,
+        "components": 1,
+        "largest": 26,
+        "connected": true
+      },
+      {
+        "cluster": 2,
+        "n": 117,
+        "components": 1,
+        "largest": 117,
+        "connected": true
+      },
+      {
+        "cluster": 3,
+        "n": 37,
+        "components": 1,
+        "largest": 37,
+        "connected": true
+      },
+      {
+        "cluster": 4,
+        "n": 64,
+        "components": 2,
+        "largest": 53,
+        "connected": false
+      },
+      {
+        "cluster": 5,
+        "n": 30,
+        "components": 1,
+        "largest": 30,
+        "connected": true
+      },
+      {
+        "cluster": 6,
+        "n": 34,
+        "components": 1,
+        "largest": 34,
+        "connected": true
+      },
+      {
+        "cluster": 7,
+        "n": 10,
+        "components": 1,
+        "largest": 10,
+        "connected": true
+      },
+      {
+        "cluster": 8,
+        "n": 61,
+        "components": 1,
+        "largest": 61,
+        "connected": true
+      },
+      {
+        "cluster": 9,
+        "n": 83,
+        "components": 1,
+        "largest": 83,
+        "connected": true
+      }
+    ]
+  }
+}

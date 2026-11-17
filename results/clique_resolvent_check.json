@@ -1,0 +1,7 @@
+{
+  "max_abs_diff_after_purge_and_row_standardize": 2.7755575615628914e-17,
+  "mean_resolvent_diagonal_before_purge": 0.14493506493506494,
+  "offdiag_corr_unpurged_resolvent_vs_clique": 0.9990333715635502,
+  "branch": "A",
+  "note": "row_normalize zeros the diagonal before dividing by the row sum. The model matrices in run_sp100 pass through row_normalize, so diagonals that the resolvent creates are removed before estimation."
+}

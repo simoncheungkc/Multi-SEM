@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.env
+.env.*
+*.pem
+credentials.json
+
+# Confidential incoming peer-review documents
+Referee Report.pdf
+Referee Report.docx
+Review report.pdf
+Review report.docx

@@ -1,0 +1,7 @@
+{
+  "months": 63,
+  "bh_months": 45,
+  "safeguard_months": 18,
+  "strict_bh_or_ols_rmse": 0.06557895005451785,
+  "strict_bh_or_ols_mae": 0.04920826305001519
+}

@@ -1,0 +1,43 @@
+{
+  "n": 200,
+  "n_holdout": 40,
+  "n_reps": 30,
+  "true_lambda": [
+    0.4,
+    0.35
+  ],
+  "mcmc": {
+    "n_iter": 800,
+    "burn": 400,
+    "n_chains": 1
+  },
+  "mean_lambda_induced_ml": [
+    0.3197842112986164,
+    0.26416980575849863
+  ],
+  "mean_lambda_marginal_ml": [
+    0.3476765547360088,
+    0.30583858941104947
+  ],
+  "mean_lambda_induced_mcmc": [
+    0.32827096867970323,
+    0.26431865574186325
+  ],
+  "mean_lambda_marginal_mcmc": [
+    0.3672269292568824,
+    0.30740937052235345
+  ],
+  "mean_abs_rel_lambda_ml": 0.15583806279581533,
+  "mean_abs_rel_lambda_mcmc": 0.8849842252645329,
+  "mean_abs_rel_beta_ml": 0.33747356539975365,
+  "mean_rmse_induced_ml": 1.0562953719351325,
+  "mean_rmse_marginal_ml": 1.0531362297136007,
+  "mean_rmse_induced_mcmc": 1.0558151186941762,
+  "mean_rmse_marginal_mcmc": 1.0533387789888489,
+  "rmse_rel_diff_ml": 0.0029997469770752473,
+  "rmse_rel_diff_mcmc": 0.0023509432622470286,
+  "median_mcmc_speedup_marginal_over_induced": 2.179869379019093,
+  "median_likelihood_speedup": 2.7002852822018215,
+  "mean_seconds_induced_mcmc": 0.6642910599863777,
+  "mean_seconds_marginal_mcmc": 1.4789355566647524
+}

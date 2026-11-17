@@ -1,0 +1,33 @@
+{
+  "date": "2026-08-31",
+  "n": 100,
+  "n_train": 80,
+  "layers": [
+    "Sector affiliation",
+    "Industry (related companies)"
+  ],
+  "lambda_prior": "beta_l1",
+  "adapt_covariance": false,
+  "n_iter": 8000,
+  "burn": 4000,
+  "n_chains": 4,
+  "seed": 2026,
+  "mean_L": 0.32384842042553175,
+  "median_L": 0.321126602447407,
+  "mode_L": 0.28125,
+  "q025_L": 0.025497984252918084,
+  "q975_L": 0.637357072233087,
+  "p_L_gt_095": 0.0,
+  "lambda_mean": [
+    0.14960960046050484,
+    0.14474313476111803
+  ],
+  "acceptance": [
+    0.2795,
+    0.266875,
+    0.30225,
+    0.256875
+  ],
+  "paper_prior_mean_L": 0.43,
+  "elapsed_sec": 6.296349287033081
+}

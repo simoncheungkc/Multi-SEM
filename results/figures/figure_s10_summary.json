@@ -1,0 +1,10 @@
+{
+  "figure": "C:\\Users\\user\\SynologyDrive\\Simon\\Multi-networks Regression\\results\\figures\\figure_s10_prior_posterior.png",
+  "truncated_gaussian_mean_L": 0.7374958341169209,
+  "uniform_ball_mean_L": 0.7501072453435013,
+  "paper_posterior_mean_L": 0.8523264703558902,
+  "beta_posterior_mean_L": 0.836241023586697,
+  "stored_gaussian_mean_L": 0.8523264703558902,
+  "stored_beta_mean_L": 0.836241023586697,
+  "jacobian_note": "Beta(1,2) on L with Dirichlet(1..1) weights includes the Jacobian L^{1-k} in Cartesian lambda coordinates."
+}

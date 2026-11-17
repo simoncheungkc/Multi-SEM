@@ -1,0 +1,37 @@
+{
+  "showcase_date": "2026-08-31",
+  "n": 100,
+  "threshold_km": 800.0,
+  "topology_full_sample": {
+    "kappa": 2.0257826887661143,
+    "psi": 0.0262211890070395,
+    "mean_degree": 21.72,
+    "max_degree": 44,
+    "isolates": 1,
+    "n_edges": 1086,
+    "leading_singular": 1.1738712082871394
+  },
+  "full_sample_correlations": [
+    {
+      "left": "Headquarters geography",
+      "right": "Correlation (5-NN)",
+      "r_vec": 0.05508646019685026
+    },
+    {
+      "left": "Headquarters geography",
+      "right": "Boosted correlation resolvent",
+      "r_vec": 0.06742952393958387
+    },
+    {
+      "left": "Headquarters geography",
+      "right": "Sector affiliation",
+      "r_vec": 0.08055147888492295
+    },
+    {
+      "left": "Headquarters geography",
+      "right": "Industry (related companies)",
+      "r_vec": 0.04329686296493313
+    }
+  ],
+  "max_abs_r": 0.08055147888492295
+}

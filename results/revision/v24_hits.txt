@@ -1,0 +1,123 @@
+
+===== 5 =====
+Spatial dependence in empirical systems often operates simultaneously across continuous physical distance, administrative jurisdictions, and functional networks. Conventional spatial error models condition on a single spatial weight matrix, potentially overlooking overlapping relational channels and distorting inference. This paper develops Multiplex Spatial Error Regression (Multi-SEM), an integrated econometric pipeline combining ex-ante structural pruning, topology-calibrated residual screening, stability-constrained Bayesian estimation, and precision-form spatial kriging. An additive disturbance specification preserves linear conditional-mean interpretability ({E}{Y}{X}{=Xβ}) under exogeneity, while the parameter restriction {‖λ}{‖}{1}{=}{s=1}{k}{|}{λ}{s}{|<1} establishes a uniform sufficient condition for spectral stability across row-substochastic layers. We derive exact design-conditional null moments for residual Moran's {I} under isolate scaling and introduce topology-triggered Monte Carlo calibration to correct finite-sample size distortions on hub-dominated networks prior to false discovery rate control. For out-of-sample prediction, formulating spatial kriging through the full-graph precision matrix ({Q=}{σ}{-2}{V}{λ}{'}{V}{λ}) reduces the computational complexity of the holdout solve from {O}{n}{t}{3} to {O}{n}{*}{3}. In an empirical application to {n=506} census tracts across 92 municipalities in Greater Boston, covariance-adapted Multi-SEM jointly represents candidate spatial dependence associated with continuous geographic proximity, a multi-hop polynomial spatial filter, and discrete municipal jurisdictions. Across 50 repeated random 80/20 splits, Multi-SEM reduces mean holdout RMSE by 28.5% relative to OLS ({0.1375} vs. {0.1921}; Nadeau–Bengio resampled {t}{49}{=7.29}, {p=2.34×}{10}{-9}, outperforming OLS on 50 of 50 splits) and achieves a 2.0% incremental error reduction over a single-layer geographic SEM ({0.1403}), attaining lower error on 37 of 50 splits (conservative resampled {t}{49}{=1.11}, {p=0.272}). Across 63 monthly S&P100 equity cross-sections, Multi-SEM achieved lower holdout RMSE than OLS in 44 months (sign test {p=0.0022}), although autocorrelation-robust inference for the monthly loss differential was less decisive (Newey–West {p=0.072}).
+
+===== 11 =====
+Tobler's first law characterizes spatial dependence through continuous distance decay, whereby nearby observations tend to be more strongly related than distant ones (Tobler, 1970). Yet administrative, legal, and functional boundaries often intersect with this geographic gradient. A residential property in Greater Boston has contiguous geographic neighbours, but also belongs to a municipal jurisdiction that determines property tax assessment, zoning bylaws, and public school provision (Harrison and Rubinfeld, 1978; Gilley and Pace, 1996). The same intersection of affiliation and co-movement arises among firms. Standard spatial regressions traditionally condition on a single weight matrix {W} (Bivand et al., 2014; Bivand and Wong, 2018). While higher-order spatial autoregressive and error models have been analyzed since Anselin (1988) and Lacombe (2004), empirical practice remains constrained by the challenge of testing, stabilizing, and estimating multiple non-commuting spatial matrices. Multi-SEM resolves this limitation through a unified pipeline combining structural pruning, calibrated screening, {l}{1}-constrained Bayesian estimation, and precision-domain spatial interpolation.
+
+===== 26 =====
+Higher-order spatial autoregressive and spatial-error specifications have been part of the classical toolkit since Anselin (1988). Lacombe (2004) showed that conclusions about a substantive spatial effect can change when the specification moves beyond a single weight matrix, and Lee and Liu (2010) gave efficient GMM theory for high-order spatial models with autoregressive disturbances. Recent empirical practice nevertheless remains dominated by the selection of one matrix {W}. Weight-matrix uncertainty has been addressed by Bayesian model averaging (LeSage and Fischer, 2008; Piribauer and Crespo Cuaresma, 2016) and by penalized selection (Lam and Souza, 2020). Multi-SEM does not claim a new mathematical model class. It provides one reproducible pipeline that combines ex-ante structural pruning, design-conditional screening, {l}{1}-constrained Bayesian estimation, and precision-domain spatial interpolation.
+
+===== 76 =====
+For {n≤500}, the log absolute determinant, {ln}{det}{V}{λ}, is computed using a dense LU factorization, with computational complexity {O}{n}{3}. Approximations suitable for large sparse systems are described in Supplement Section S5.2.
+
+===== 112 =====
+{β∼N}{0}{100I}{, }{σ}{2}{∼}{InvGamma}{⁡}{0.001}{0.001}{,}
+
+===== 127 =====
+{σ}{2}{∣Y,X,β,λ∼}{InvGamma}{α}{0}{+}{n}{2}{,}{γ}{0}{+}{1}{2}{(Y-Xβ)'}{V}{λ}{'}{V}{λ}{(Y-Xβ)}{.}
+
+===== 130 =====
+To accommodate candidate layers that are nearly collinear, such as geographic distance and its resolvent, the Metropolis proposal adapts its covariance during burn-in (Haario, Saksman, and Tamminen, 2001; Roberts and Rosenthal, 2009). After the first 50 burn-in draws, which use an isotropic Gaussian step so that the chain can move before the covariance is estimated, candidates are drawn from {λ}{*}{∼N(}{λ}{(t-1)}{,}{τ}{t}{2}{Σ}{t}{)}, with {Σ}{t}{=}{2.38}{2}{k}{Cov}{(}{λ}{(0:t-1)}{)+}{10}{-5}{I}{k}. The factor {2.38}{2}{k} is the Gelman–Roberts–Gilks scaling (Roberts, Gelman, and Gilks, 1997), and {k} is the number of active layers. The scalar {τ}{t} starts at 0.08 and is multiplied by 0.85 or 1.15 every 50 iterations when the acceptance rate in that window is outside {[0.22,0.38]}. It is restricted to {[}{10}{-4}{,1]}. A proposal with {‖}{λ}{*}{‖}{1}{=}{s=1}{k}{|}{λ}{s}{*}{|≥1} is rejected before the determinant is evaluated. The proposal is symmetric, so it is accepted with probability {min}{{1,}{exp}{(Δ}{log}{π}{)}}, where
+
+===== 132 =====
+After burn-in, both {Σ}{t} and {τ}{t} are fixed at the values from the last burn-in iteration. The transition kernel on the retained draws is therefore time-homogeneous (Roberts and Rosenthal, 2009). The simulation experiments and the S&P100 fits were computed with the earlier isotropic proposal {τ}{2}{I}{k} and have not been rerun. The Boston posteriors in Section 8.1 use the covariance-adapted kernel, with 8,000 iterations and 4,000 burn-in draws on each of four chains.
+
+===== 134 =====
+5.4 Algorithm 2
+
+===== 135 =====
+Algorithm 2. Adaptive Metropolis-within-Gibbs sampler
+
+===== 139 =====
+Step 4. Draw {σ}{2} from its inverse-gamma full conditional and then update the posterior ordinate for {λ}.
+
+===== 186 =====
+Thus, on the Table 3 graph, Monte Carlo calibration reduces the null rejection rate from 11.6% to 6.2%, bringing it substantially closer to the nominal 5% level. Power decreases from 73.4% to 63.2%, reflecting the cost of correcting the liberal Gaussian tail. The earlier bootstrap experiment, which generated a different power-law graph for each {n}, is therefore not used as evidence for the results in Table 3.
+
+===== 188 =====
+{Residual Moran statistic}{  }{⟶}{  }{bootstrap/permutation calibration}{  }{⟶}{ }{ }{network-specific }{p}{-values}{  }{⟶}{  }{Benjamini–Hochberg FDR control}
+
+===== 213 =====
+The Gaussian factor {exp}{(-}{λ}{2}{2}{/2)} varies only from about 0.61 to 1 on the open {l}{1} ball when {ξ=1}. The volume of the {l}{1} cross-polytope of radius {L} scales as {L}{k}, so the marginal prior of {L=‖λ}{‖}{1} induced by a nearly flat density on the ball satisfies {p(L)∝}{L}{k-1} on {[0,1)}. For {k=3} this is {p(L)∝}{L}{2}, which places more prior mass near the outer shell. Supplementary Figure S10 compares that prior with the Boston Split 5 posterior and with a refit under a Beta{(1,2)} prior that puts zero density at {L=1}. Section S2.3 reports the numerical comparison.
+
+===== 217 =====
+Notes: True network autoregressive parameters are set to {λ}{0}{=}{0.50,-0.30,0,0,0}{'}, yielding a signed sum of {s=1}{5}{λ}{s}{=0.20} and an {l}{1} norm of {‖λ‖}{​}{1}{=0.80}. Each replication generates a fresh realization of the five-network multiplex and a design matrix of five independent, column-standardized Gaussian regressors. Posterior sampling uses the covariance-adapted Metropolis-within-Gibbs algorithm (Algorithm 2) run across four parallel chains for 6,000 iterations each (3,000 burn-in draws discarded). Bias and RMSE are computed from the posterior means across the 200 replications. Coverage denotes the proportion of replications for which the equal-tailed central 95% posterior credible interval contains the true data-generating value. Max {R} is the highest Gelman–Rubin potential scale reduction factor observed for that parameter across all 200 simulation trials.
+
+===== 240 =====
+Table 6. Full-sample Boston candidate networks. Kappa uses unstandardized row sums. Psi uses the singular values of the row-standardized matrix.
+
+===== 246 =====
+Table 7. Residual Moran screening on the 405 training tracts, averaged over 50 splits. Monte Carlo is the share of splits in which kappa or psi selected the {B=499} reference.
+
+===== 250 =====
+Posterior estimation follows Algorithm 2, using four chains of 8,000 iterations each, with the first 4,000 iterations discarded as burn-in and the prior specification reported in Table 1. Predictions use posterior means together with the full {506×506} network matrices. Thus, the procedure combines induced-subgraph estimation with full-graph imputation. The holdout correction requires factorization of the {101×101} holdout precision block rather than the {405×405} training covariance, giving a ratio of cubic computational costs of {405}{101}{3}{≈64.5.}
+
+===== 261 =====
+The same conclusion is in Table S9: the municipal increment and the resolvent increment are both visible in the point estimates, and the corrected intervals against the geographic SEM include zero.
+
+===== 271 =====
+Historical adjusted daily closing prices are obtained from Yahoo Finance for 100 constituent equities of the S&P100 over the period from 2 January 2018 to 31 August 2026. For each monthly cross-section, the response vector {Y∈}{R}{n}, with {n=100}, contains the monthly returns of the 100 firms.
+
+===== 274 =====
+The {n=100} equities are the S&P100 constituents as constituted on 31 August 2026. This constituent universe is held fixed throughout the 63-month evaluation period, from June 2021 through August 2026, and is backfilled over the historical price series. Fixing the endpoint universe eliminates entry and exit rebalancing and maintains a stable 100-node multiplex, but it also conditions the analysis on index membership at the end of the sample period. Within each monthly rolling step {t}, the explanatory variables {X}{t} and correlation matrices {A}{corr}{,t} are constructed exclusively from information dated before month {t}.
+
+===== 275 =====
+The sample consists of the 100 corporate constituents of the S&P100 as of 31 August 2026. Alphabet Inc. has two liquid share classes, GOOG and GOOGL; only GOOGL (Class A) is retained so that the cross-section does not contain two nodes representing the same corporate balance sheet.
+
+===== 285 =====
+Table 10 uses this industry matrix. The isolate count is unchanged, and the August 2026 Moran statistic is not recomputed.
+
+===== 288 =====
+August 2026 Archived Illustrative Snapshot
+
+===== 290 =====
+To examine MCMC parameter mixing and precision-kriging mechanics on an overlapping network, this subsection uses the archived August 2026 cross-section. The exploratory screen for that illustrative snapshot used the full 100-firm cross-section, including the 20 outcomes later held out. The 63-month panel is the out-of-sample assessment: each month screens only the 80 training equities.
+
+===== 291 =====
+Table 10 reports the archived August 2026 screening results. The archived screen was computed from OLS residuals using all {n=100}equities and therefore includes the 20 outcomes subsequently designated as holdout observations. On this full-sample screen, the industry and sector layers are the two networks that survive Benjamini–Hochberg control, motivating the two-layer specification reported in Table 11.
+
+===== 298 =====
+The {n=100} equities are partitioned into {n}{t}{=80} training firms and {n}{*}{=20} holdout firms. Using the prior specification in Table 1, the two-network Multi-SEM is estimated using Algorithm 2 with the isotropic random-walk proposal. Four parallel MCMC chains are run for 8,000 iterations each, with the first 4,000 iterations discarded as burn-in, yielding {4}{8,000-4,000}{=16,000} retained posterior draws. Metropolis–Hastings acceptance rates range from 24% to 35%. Table 11 reports the posterior summaries.
+
+===== 315 =====
+The four archived {p}-values do not lie on the Monte Carlo grid {0.002,0.004,…}, because the archived screening routine reports the Gaussian tail. For the correlation, resolvent, and sector layers, {κ} and {ψ} are below the thresholds, so the Gaussian tail is the operational {p}-value. The industry layer has {κ=3.07}. Recomputing the conditional Gaussian Monte Carlo on that same full cross-section of 100 equities, with {B=499} spherical draws and seed 2026, produces 2 standardized draws at least as extreme as the observed statistic, so {p}{MC}{=(1+2)/500=0.006}. The same draws produce 6 exceedances of the absolute Moran statistic, or {0.014}. The industry layer remains inside the Benjamini–Hochberg selection under either probability. The 80-firm training block from the same split has {κ=2.46}, below the Monte Carlo trigger, and a Gaussian tail of {0.028}. That training block is not the screen in Table 10, and it does not yield {p}{MC}{=0.0040}. Each exceedance moves the add-one probability by {0.002}, so another Monte Carlo seed can print {0.004}. The probability recorded here is the seed-2026 result on the cross-section that has {κ=3.07}.
+
+===== 316 =====
+August 2026 Holdout Performance
+
+===== 321 =====
+Supplementary Figure S7 plots predicted against observed August 2026 holdout returns.
+
+===== 322 =====
+Two non-network benchmarks use the same August 2026 split. An industry fixed-effects regression, containing an intercept for each Yahoo Finance industry represented in the training sample together with the same slope covariates, yields an RMSE of 0.0653, an MAE of 0.0502, and a correlation of 0.61. A one-factor imputation benchmark predicts each holdout return using its trailing 36-month beta, shrunk halfway toward one, multiplied by the equal-weighted training-sample return for the same month. This benchmark yields an RMSE of 0.0697, an MAE of 0.0576, and a correlation of {-0.34}. Multi-SEM therefore produces the lowest overall prediction error, with an RMSE of 0.0576. The sector SEM (0.0588) and industry SEM (0.0609) also outperform OLS (0.0637), whereas industry fixed effects (0.0653) and one-factor shrinkage (0.0697) do not.
+
+===== 324 =====
+To assess whether the predictive improvement observed in August 2026 persists beyond a single cross-section, we evaluate the complete Multi-SEM pipeline over 63 consecutive months, from June 2021 through August 2026.
+
+===== 345 =====
+Among the individual network specifications, the Yahoo Finance industry network provides the strongest predictive performance, with a mean RMSE of 0.06608. The dynamically selected Multi-SEM nonetheless achieves a slightly lower mean RMSE of 0.06568. This result suggests that the fine-grained industry network contains substantial predictive information, while the additional network layers selected in different months provide a smaller incremental improvement. The comparison therefore supports a dynamic multiplex specification rather than imposing a single relational topology throughout the entire sample period.
+
+===== 348 =====
+Table 10. Residual Moran's {I} for the August 2026 showcase. The archived screen used all {n=100} equities, before the 80/20 split. {κ} is the maximum degree divided by the mean degree on the off-diagonal adjacency. {ψ} is the leading singular-value share of the row-standardized matrix. The stored probabilities are analytical Gaussian tails. For the industry layer, {κ=3.07}, so Algorithm 1 calls for conditional Gaussian Monte Carlo. On this same full cross-section, {B=499} spherical draws with seed 2026 give {p}{MC}{=(1+2)/500=0.006} for the standardized statistic. The industry cell reports the Gaussian tail and that Monte Carlo probability together.
+
+===== 349 =====
+Table 10. Residual Moran's {I} for the August 2026 showcase. The archived screen used all {n=100} equities, before the 80/20 split ({d=n-p-1=95}). {κ} is the maximum degree divided by the mean degree on the off-diagonal adjacency. {ψ} is the leading singular-value share of the row-standardized matrix. The {p}-values are the analytical Gaussian tails stored by the screening routine.
+
+===== 352 =====
+Table 11.  Posterior summaries, S&P 100 Multi-SEM, August 2026 (80 training stocks).
+
+===== 356 =====
+Figure 4.  S&P 100 Gibbs traces for {λ} after burn-in, August 2026. Four chains shown in blue, orange, green, and red. All draws satisfy {s=1}{k}{λ}{s}{<1}.
+
+===== 357 =====
+Table 12.  August 2026 holdout performance {(}{n}{test}{=20)}.
+
+===== 360 =====
+Table 13.  Mean monthly holdout error, S&P 100, June 2021–August 2026 (63 months).
+
+===== 364 =====
+Figure 5.  Running monthly holdout RMSE for a fixed 20% ticker holdout, June 2021–August 2026.
+
+===== 368 =====
+9. Conclusion

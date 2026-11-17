@@ -1,0 +1,140 @@
+{
+  "chas": {
+    "title": "Charles River dummy included",
+    "n_t": 405,
+    "n_star": 101,
+    "rows": [
+      {
+        "model": "OLS",
+        "mean_rmse": 0.19038320159445124,
+        "mean_mae": 0.13868284295221803,
+        "wins_vs_ols": 0,
+        "nadeau_bengio_vs_geo": null
+      },
+      {
+        "model": "Geographic SEM",
+        "mean_rmse": 0.1410352740722527,
+        "mean_mae": 0.10103179738880169,
+        "wins_vs_ols": 49,
+        "nadeau_bengio_vs_geo": null
+      },
+      {
+        "model": "Screened Multi-SEM",
+        "mean_rmse": 0.13777261685007183,
+        "mean_mae": 0.09848060365254219,
+        "wins_vs_ols": 50,
+        "nadeau_bengio_vs_geo": {
+          "name": "Screened Multi-SEM",
+          "R": 50,
+          "n_t": 405,
+          "n_star": 101,
+          "correction_factor": 0.26938271604938274,
+          "mean_mse_reduction": 0.0008849653753921983,
+          "variance_d": 1.7519542925384638e-06,
+          "se_corrected": 0.0006869834100750805,
+          "t": 1.2881903149531373,
+          "df": 49,
+          "p": 0.20372973560173868,
+          "ci95": [
+            -0.0004955794738132851,
+            0.0022655102245976817
+          ],
+          "wins": 38,
+          "ties": 0,
+          "losses": 12
+        }
+      }
+    ],
+    "multi_vs_ols": {
+      "name": "Multi-SEM vs OLS",
+      "R": 50,
+      "n_t": 405,
+      "n_star": 101,
+      "correction_factor": 0.26938271604938274,
+      "mean_mse_reduction": 0.01728272767647414,
+      "variance_d": 2.2161824956240567e-05,
+      "se_corrected": 0.0024433609228525933,
+      "t": 7.073342098103447,
+      "df": 49,
+      "p": 5.1072526208173485e-09,
+      "ci95": [
+        0.012372610070540321,
+        0.022192845282407954
+      ],
+      "wins": 50,
+      "ties": 0,
+      "losses": 0
+    },
+    "rmse_reduction_vs_ols": 0.276340477015661,
+    "rmse_reduction_vs_geo": 0.02313362556738389
+  },
+  "censor": {
+    "title": "16 ceiling-censored tracts excluded",
+    "n_t": 392,
+    "n_star": 98,
+    "rows": [
+      {
+        "model": "OLS",
+        "mean_rmse": 0.18061381654860542,
+        "mean_mae": 0.1326541207227593,
+        "wins_vs_ols": 0,
+        "nadeau_bengio_vs_geo": null
+      },
+      {
+        "model": "Geographic SEM",
+        "mean_rmse": 0.12969531411972074,
+        "mean_mae": 0.0945136288697771,
+        "wins_vs_ols": 50,
+        "nadeau_bengio_vs_geo": null
+      },
+      {
+        "model": "Screened Multi-SEM",
+        "mean_rmse": 0.12885753116424709,
+        "mean_mae": 0.09303052341874357,
+        "wins_vs_ols": 50,
+        "nadeau_bengio_vs_geo": {
+          "name": "Screened Multi-SEM",
+          "R": 50,
+          "n_t": 392,
+          "n_star": 98,
+          "correction_factor": 0.27,
+          "mean_mse_reduction": 0.00020637288252621527,
+          "variance_d": 6.434862265995609e-07,
+          "se_corrected": 0.00041682284148290323,
+          "t": 0.49510934139793306,
+          "df": 49,
+          "p": 0.6227359376170742,
+          "ci95": [
+            -0.0006312639779876732,
+            0.0010440097430401039
+          ],
+          "wins": 35,
+          "ties": 0,
+          "losses": 15
+        }
+      }
+    ],
+    "multi_vs_ols": {
+      "name": "Multi-SEM vs OLS",
+      "R": 50,
+      "n_t": 392,
+      "n_star": 98,
+      "correction_factor": 0.27,
+      "mean_mse_reduction": 0.01608214241031379,
+      "variance_d": 2.0593392913795854e-05,
+      "se_corrected": 0.002358011044657103,
+      "t": 6.820215048081941,
+      "df": 49,
+      "p": 1.2598331267099638e-08,
+      "ci95": [
+        0.011343541806093628,
+        0.020820743014533953
+      ],
+      "wins": 50,
+      "ties": 0,
+      "losses": 0
+    },
+    "rmse_reduction_vs_ols": 0.28655773059548895,
+    "rmse_reduction_vs_geo": 0.006459623935991264
+  }
+}

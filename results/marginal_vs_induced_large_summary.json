@@ -1,0 +1,88 @@
+{
+  "n200": {
+    "n": 200,
+    "n_hold": 40,
+    "n_reps": 50,
+    "mean_lambda_induced": [
+      0.3052270686272557,
+      0.2649235495766769
+    ],
+    "mean_lambda_marginal": [
+      0.33904965585188657,
+      0.3129997277649093
+    ],
+    "bias_induced": [
+      -0.09477293137274434,
+      -0.08507645042332307
+    ],
+    "bias_marginal": [
+      -0.060950344148113456,
+      -0.03700027223509067
+    ],
+    "median_rel_lambda": [
+      0.13670654923980577,
+      0.14923001015110182
+    ],
+    "mean_rmse_induced": 1.0168678933917201,
+    "mean_rmse_marginal": 1.013687308879946,
+    "rmse_rel_diff_of_means": 0.003137638681980125,
+    "median_rmse_rel": 0.009910526370928012,
+    "median_beta_rel": 0.045728989946628926,
+    "median_slope_rel": 0.0365939500949876,
+    "median_likelihood_speedup": 2.561266641297737,
+    "ml_success_induced": 50,
+    "ml_success_marginal": 50,
+    "mean_lambda_induced_mcmc": [
+      0.3213394456707244,
+      0.2675000044939874
+    ],
+    "mean_lambda_marginal_mcmc": [
+      0.3668744621361303,
+      0.31425193134727114
+    ],
+    "median_rel_lambda_mcmc": [
+      0.16080608097168142,
+      0.14033987824877914
+    ],
+    "mean_rmse_induced_mcmc": 1.0149535436661468,
+    "mean_rmse_marginal_mcmc": 1.0122182813746141,
+    "median_mcmc_speedup": 2.1815099688678936,
+    "mean_seconds_induced_mcmc": 1.6710040400060826,
+    "mean_seconds_marginal_mcmc": 3.6740348399896177
+  },
+  "n500": {
+    "n": 500,
+    "n_hold": 100,
+    "n_reps": 20,
+    "mean_lambda_induced": [
+      0.31958667316989875,
+      0.26509051220996277
+    ],
+    "mean_lambda_marginal": [
+      0.3905775658042364,
+      0.3283072683853785
+    ],
+    "bias_induced": [
+      -0.08041332683010127,
+      -0.08490948779003721
+    ],
+    "bias_marginal": [
+      -0.009422434195763607,
+      -0.021692731614621485
+    ],
+    "median_rel_lambda": [
+      0.18295265003520897,
+      0.18771311917850836
+    ],
+    "mean_rmse_induced": 0.9992985343563596,
+    "mean_rmse_marginal": 0.9985489558911995,
+    "rmse_rel_diff_of_means": 0.000750667717128712,
+    "median_rmse_rel": 0.006455545789820976,
+    "median_beta_rel": 0.04893169520042663,
+    "median_slope_rel": 0.020034184099267813,
+    "median_likelihood_speedup": 1.9009167683405088,
+    "ml_success_induced": 20,
+    "ml_success_marginal": 20
+  },
+  "minutes": 4.854781361420949
+}

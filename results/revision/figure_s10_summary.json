@@ -1,0 +1,28 @@
+{
+  "gaussian_prior_posterior": {
+    "mean_L": 0.8523264703558902,
+    "mode_L": 0.84375,
+    "q025": 0.7704022064383781,
+    "q975": 0.9713812157896204,
+    "refit_mean_L": 0.8523264703558902,
+    "stored_mean_L": 0.8523264703558902,
+    "lambda_mean": [
+      0.1605277425282848,
+      0.45806305003136316,
+      0.2223823555805752
+    ]
+  },
+  "beta_prior_posterior": {
+    "mean_L": 0.836241023586697,
+    "mode_L": 0.84375,
+    "q025": 0.7557199775286616,
+    "q975": 0.9208932824709808,
+    "lambda_mean": [
+      0.17407985642790447,
+      0.43556957343844815,
+      0.22171605936990482
+    ]
+  },
+  "prior_uniform_ball_mean_L": 0.7501072453435013,
+  "figure": "C:\\Users\\user\\SynologyDrive\\Simon\\Multi-networks Regression\\results\\boston\\figure_s10_prior_vs_posterior_L.png"
+}

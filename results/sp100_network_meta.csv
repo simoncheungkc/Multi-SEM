@@ -1,0 +1,5 @@
+n_nodes,n_edges,mean_degree,median_degree,max_degree,isolates,degree_cv,min_positive_degree,name
+100,362,7.24,6.0,18,0,0.36601949337131234,5,Correlation (5-NN)
+100,4950,100.0,100.0,100,0,0.0,100,Boosted correlation resolvent
+100,561,11.22,12.0,16,0,0.37424241362959254,1,Sector affiliation
+100,114,2.28,1.0,7,17,0.8947368421052633,1,Industry (related companies)

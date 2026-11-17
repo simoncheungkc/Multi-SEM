@@ -1,0 +1,42 @@
+{
+  "net_seed": 1829338324,
+  "graph_matches_network_meta_n100": true,
+  "kappa": 6.3559322033898304,
+  "psi_singular_value_share": 0.05236467166738119,
+  "rule": "bootstrap if kappa>3 or psi>0.20",
+  "rule_triggers": true,
+  "degree": {
+    "n_nodes": 100,
+    "n_edges": 236,
+    "mean_degree": 4.72,
+    "median_degree": 3.0,
+    "max_degree": 30,
+    "isolates": 0,
+    "degree_cv": 1.0495652374148894,
+    "min_positive_degree": 1
+  },
+  "rates": [
+    {
+      "setting": "H0",
+      "network": "Power-law gamma=2.2",
+      "n": 100,
+      "n_reps": 500,
+      "B": 499,
+      "gaussian_reject_rate": 0.116,
+      "bootstrap_reject_rate": 0.062,
+      "mean_gaussian_p": 0.4378783461286018,
+      "mean_bootstrap_p": 0.48577599999999993
+    },
+    {
+      "setting": "H1",
+      "network": "Power-law gamma=2.2",
+      "n": 100,
+      "n_reps": 500,
+      "B": 499,
+      "gaussian_reject_rate": 0.734,
+      "bootstrap_reject_rate": 0.632,
+      "mean_gaussian_p": 0.07041036131745844,
+      "mean_bootstrap_p": 0.095304
+    }
+  ]
+}

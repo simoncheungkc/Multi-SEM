@@ -1,0 +1,145 @@
+[
+  {
+    "model": "A. Geographic SEM",
+    "mean_rmse": 0.14859462565888665,
+    "mean_mae": 0.10462985483935085,
+    "wins_vs_ols": 2,
+    "nadeau_bengio_vs_geo": {
+      "name": "A. Geographic SEM",
+      "t": null,
+      "p": null,
+      "wins": 0,
+      "note": "baseline"
+    }
+  },
+  {
+    "model": "B. Geographic resolvent only",
+    "mean_rmse": 0.14562608064467952,
+    "mean_mae": 0.10312360146932201,
+    "wins_vs_ols": 2,
+    "nadeau_bengio_vs_geo": {
+      "name": "B. Geographic resolvent only",
+      "R": 2,
+      "n_t": 405,
+      "n_star": 101,
+      "correction_factor": 0.7493827160493827,
+      "mean_mse_reduction": 0.0008564802919117463,
+      "variance_d": 1.6924477481966339e-07,
+      "se_corrected": 0.00035613074710213593,
+      "t": 2.4049602537298287,
+      "df": 1,
+      "p": 0.250865524498878,
+      "ci95": [
+        -0.003668589893614845,
+        0.005381550477438338
+      ],
+      "wins": 2,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "model": "C. Municipal cliques only",
+    "mean_rmse": 0.1586526719703674,
+    "mean_mae": 0.1089542645045341,
+    "wins_vs_ols": 2,
+    "nadeau_bengio_vs_geo": {
+      "name": "C. Municipal cliques only",
+      "R": 2,
+      "n_t": 405,
+      "n_star": 101,
+      "correction_factor": 0.7493827160493827,
+      "mean_mse_reduction": -0.003067229605122873,
+      "variance_d": 4.691887782470839e-07,
+      "se_corrected": 0.0005929603367702525,
+      "t": -5.172739920227239,
+      "df": 1,
+      "p": 0.12157235760941343,
+      "ci95": [
+        -0.010601505044556796,
+        0.004467045834311051
+      ],
+      "wins": 0,
+      "ties": 0,
+      "losses": 2
+    }
+  },
+  {
+    "model": "D. Geographic + municipal",
+    "mean_rmse": 0.1455247379597333,
+    "mean_mae": 0.09977952826097501,
+    "wins_vs_ols": 2,
+    "nadeau_bengio_vs_geo": {
+      "name": "D. Geographic + municipal",
+      "R": 2,
+      "n_t": 405,
+      "n_star": 101,
+      "correction_factor": 0.7493827160493827,
+      "mean_mse_reduction": 0.0008670503320178883,
+      "variance_d": 7.47555607095649e-07,
+      "se_corrected": 0.0007484686040464774,
+      "t": 1.1584324677485702,
+      "df": 1,
+      "p": 0.4533547209257338,
+      "ci95": [
+        -0.008643144989595525,
+        0.010377245653631302
+      ],
+      "wins": 2,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "model": "E. Geographic + resolvent",
+    "mean_rmse": 0.14576596724008367,
+    "mean_mae": 0.10334693835004179,
+    "wins_vs_ols": 2,
+    "nadeau_bengio_vs_geo": {
+      "name": "E. Geographic + resolvent",
+      "R": 2,
+      "n_t": 405,
+      "n_star": 101,
+      "correction_factor": 0.7493827160493827,
+      "mean_mse_reduction": 0.0008108937631847151,
+      "variance_d": 2.879330394976114e-07,
+      "se_corrected": 0.0004645126943142396,
+      "t": 1.7456869814544855,
+      "df": 1,
+      "p": 0.3311758165159526,
+      "ci95": [
+        -0.0050912996333241445,
+        0.006713087159693575
+      ],
+      "wins": 2,
+      "ties": 0,
+      "losses": 0
+    }
+  },
+  {
+    "model": "F. Screened Multi-SEM",
+    "mean_rmse": 0.14413080522141836,
+    "mean_mae": 0.09964087024354834,
+    "wins_vs_ols": 2,
+    "nadeau_bengio_vs_geo": {
+      "name": "F. Screened Multi-SEM",
+      "R": 2,
+      "n_t": 405,
+      "n_star": 101,
+      "correction_factor": 0.7493827160493827,
+      "mean_mse_reduction": 0.0012656111719002924,
+      "variance_d": 8.897878726282847e-07,
+      "se_corrected": 0.0008165731153411714,
+      "t": 1.5499055113656406,
+      "df": 1,
+      "p": 0.3647792553785041,
+      "ci95": [
+        -0.009109934013680624,
+        0.01164115635748121
+      ],
+      "wins": 2,
+      "ties": 0,
+      "losses": 0
+    }
+  }
+]

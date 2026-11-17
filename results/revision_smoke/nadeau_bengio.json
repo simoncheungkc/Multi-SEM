@@ -1,0 +1,55 @@
+{
+  "source": "results/boston_adaptive/split_*.json",
+  "loss": "holdout MSE = RMSE^2",
+  "comparisons": [
+    {
+      "name": "Multi-SEM vs OLS",
+      "R": 50,
+      "n_t": 405,
+      "n_star": 101,
+      "correction_factor": 0.26938271604938274,
+      "mean_mse_reduction": 0.018027590734272708,
+      "variance_d": 2.268267447853322e-05,
+      "se_corrected": 0.002471906239785663,
+      "t": 7.292991313390538,
+      "df": 49,
+      "p": 2.335735160841068e-09,
+      "ci95": [
+        0.013060109166294189,
+        0.02299507230225123
+      ],
+      "wins": 50,
+      "ties": 0,
+      "losses": 0
+    },
+    {
+      "name": "Multi-SEM vs Geographic SEM",
+      "R": 50,
+      "n_t": 405,
+      "n_star": 101,
+      "correction_factor": 0.26938271604938274,
+      "mean_mse_reduction": 0.0007614285137268062,
+      "variance_d": 1.7452330556136055e-06,
+      "se_corrected": 0.0006856643644381385,
+      "t": 1.1104974287977645,
+      "df": 49,
+      "p": 0.27220456929012826,
+      "ci95": [
+        -0.0006164656140300351,
+        0.0021393226414836474
+      ],
+      "wins": 37,
+      "ties": 0,
+      "losses": 13
+    }
+  ],
+  "max_L_split5": 0.9998766490154207,
+  "max_L_across_splits": 0.9999978261983273,
+  "mean_rmse": {
+    "ols": 0.19214103250544595,
+    "geo": 0.14030299892710268,
+    "multi": 0.13745452041759706,
+    "multi_mean": 0.20724519236781405,
+    "town": 0.1499477737968465
+  }
+}

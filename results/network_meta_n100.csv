@@ -1,0 +1,6 @@
+n_nodes,n_edges,mean_degree,median_degree,max_degree,isolates,degree_cv,min_positive_degree,name,kind,gamma
+100,408,8.0,8.0,17,0,0.3345924891486573,2,Poisson d=8,poisson,
+100,236,4.72,3.0,30,0,1.0495652374148894,1,Power-law gamma=2.2,powerlaw,2.2
+100,168,3.36,2.0,30,0,1.0408329997330663,1,Power-law gamma=2.5,powerlaw,2.5
+100,149,2.98,2.0,12,1,0.6241610738255032,1,Power-law gamma=3.0,powerlaw,3.0
+100,193,4.0,4.0,12,1,0.5207447216270357,1,Poisson d=4 (null),poisson,

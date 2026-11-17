@@ -1,0 +1,84 @@
+
+===== 145 =====
+an inverse-gamma prior to the innovation variance, {σ}{2}{∼}{InvGamma}{⁡}{α}{0}{γ}{0}{,} with density 
+
+===== 149 =====
+Throughout the analysis, {c}{β}{=100}, {α}{0}{=}{γ}{0}{=0.001}, and {ξ=1}. We assign {σ}{2}{∼}{InvGamma}{(0.001,0.001)}, a conventional diffuse scale prior in spatial econometrics (LeSage & Pace, 2009); prior sensitivity reported in Table S4 confirms posterior robustness across informative and non-informative specifications. Combining the likelihood and priors gives the joint posterior kernel.
+
+===== 158 =====
+{β∣Y,X,}{σ}{2}{,λ∼N}{μ}{β}{Σ}{β}{.}{(S2.3)}
+
+===== 180 =====
+Equation (S2.6a) is therefore the kernel of an inverse-gamma distribution:
+
+===== 181 =====
+{σ}{2}{∣Y,X,β,λ∼}{InvGamma}{⁡}{α}{σ}{γ}{σ}{,}{(S2.6)}
+
+===== 184 =====
+Under the inverse-gamma parameterization used here, {γ}{σ} is the scale parameter. Sampling {σ}{2} can be implemented through its reciprocal. If {w=}{1}{σ}{2}{,}{ }then 
+
+===== 185 =====
+{w∼}{Gamma}{shape}{=}{α}{σ}{, }{rate}{=}{γ}{σ}{,}
+
+===== 206 =====
+Set {τ}{0}{=0.08}. For the covariance-adapted kernel used in the Boston application, {Σ}{t}{=}{I}{k} during the first 50 burn-in iterations and {Σ}{t}{=}{2.38}{2}{k}{Cov}{(}{λ}{(0:t-1)}{)+}{10}{-5}{I}{k} after that, until burn-in ends. The isotropic kernel used for the simulation and S&P fits keeps {Σ}{t}{=}{I}{k}.
+
+===== 214 =====
+Draw {σ}{2(t)} from the inverse-gamma conditional in Equation (S2.6), then refresh {e=Y-X}{β}{(t)}.
+
+===== 219 =====
+S2.3 Prior volume of {L} and the Boston posterior
+
+===== 222 =====
+The same split was refit with {L∼}{Beta}{(1,2)}, so {p(L)∝(1-L)}, and with the signed composition uniform on the {l}{1} sphere (absolute parts Dirichlet{(1,1,1)}, independent signs). This prior has zero density at {L=1}. The resulting posterior mean of {L} is 0.836 and the histogram mode is 0.844 (quantiles 0.756 to 0.921). The paper-prior posterior has 97.5% quantile 0.971. The Beta prior, which puts zero density at {L=1}, shortens that upper tail and leaves the histogram mode essentially unchanged. The mode does not move toward zero.
+
+===== 224 =====
+Figure S10. Prior and posterior densities of {L=‖λ}{‖}{1} on Boston Split 5. Left: uniform draws in the {l}{1} ball, whose marginal is proportional to {L}{2}, against the MCMC posterior under the paper prior. Right: the Beta{(1,2)} prior density against the posterior obtained when that prior replaces the Gaussian factor.
+
+===== 252 =====
+Predictive performance is evaluated using 30 independent holdout experiments at {n=200,} with an 80/20 node split between the training and holdout samples. Table 5 in the main text reports the resulting holdout performance metrics across the 30 trials, including RMSE and MAE for OLS, single-network SEMs, and the Multi-SEM specifications. Supplementary Figure S5 plots predicted versus realized holdout outcomes for the first simulation replication, illustrating the effect of the contemporaneous network-kriging adjustment on individual predictions. Supplementary Figure S6 summarizes the mean holdout RMSE across the competing model specifications and provides a direct comparison of their overall predictive performance.
+
+===== 254 =====
+Finally, Table S4 examines the sensitivity of posterior inference to alternative prior specifications. The table reports posterior means and corresponding 95% posterior credible intervals under Gaussian prior precisions {ξ∈}{0.1}{1.0}{5.0}{,} together with alternative inverse-gamma hyperparameter choices for the innovation variance. These sensitivity analyses assess whether the principal conclusions about the regression coefficients, network autoregressive parameters, and innovation variance depend materially on the particular prior specification used in the baseline Multi-SEM analysis.
+
+===== 284 =====
+S4.4 August 2026 Showcase
+
+===== 285 =====
+The August 2026 cross-section provides an archived illustrative snapshot of Multi-SEM estimation, posterior inference, and precision-form imputation. Table 10 in the main text reports the residual Moran screening results. At the FDR threshold {q}{*}{=0.05,} the procedure retains the Yahoo Finance industry network {p=0.0038} and the Yahoo Finance sector network {p=0.0070.} In contrast, the trailing-return correlation network is not retained, {p=0.406.} The resulting August specification therefore contains the sector and industry affiliation layers.
+
+===== 292 =====
+For August 2026, {P}{λ}{sec}{>0}{Y}{=0.868,} while {P}{λ}{ind}{>0}{Y}{=0.934.} Thus, although both marginal 95% credible intervals include zero, the posterior distributions place substantial probability on positive residual network dependence. The distance of the posterior from the stability boundary is assessed using
+
+===== 296 =====
+Thus, the August results provide two complementary forms of evidence: posterior evidence of positive residual network dependence and improved contemporaneous holdout prediction.
+
+===== 297 =====
+S4.5 Longitudinal 63-Month Holdout Performance
+
+===== 298 =====
+Table 13 reports aggregate holdout performance over 63 consecutive months from June 2021 through August 2026. Figure 5 plots the month-by-month holdout RMSE, while Supplementary Figure S8 compares the mean RMSE across the competing model specifications. Across the full evaluation period, the mean holdout RMSE is {RMS}{E}{Multi}{=0.06568} for Multi-SEM and {RMS}{E}{OLS}{=0.06845} for OLS.
+
+===== 303 =====
+Across the 63 months, {d}{=0.000403,} and the conventional paired test gives {t}{62}{=3.60, p=0.00063.} The mean monthly RMSE difference, {RMS}{E}{OLS}{,t}{-RMS}{E}{Multi}{,t}{,} is {0.00278,} with a 95% paired-{t} confidence interval of {0.00115}{ }{0.00441}{.} Because monthly loss differentials may be serially dependent, an autocorrelation-robust comparison is also reported. If the squared-error differentials are treated as uncorrelated, the Diebold-Mariano-type statistic is {3.60.} Using a Newey-West long-run variance estimator with lag 3, the statistic decreases to {1.80,} with a two-sided normal {p}-value of {0.072} (Diebold & Mariano, 1995; Newey & West, 1987). Thus, the sign test and conventional paired test provide significant evidence that Multi-SEM improves monthly holdout performance, while the autocorrelation-robust comparison provides weaker evidence. Reporting these results together makes clear that the strength of the longitudinal comparison depends partly on how serial dependence in the monthly loss differentials is treated.
+
+===== 320 =====
+S5.1 Replication Manifest
+
+===== 322 =====
+Data and code availability. The replication code and the frozen inputs data/boston_corrected.txt and data/sp100_clean_snapshot.csv are the files used for this revision. The intended public archive is https://github.com/simoncheungkc/Multi-SEM, with a Zenodo deposit cited as 10.5281/zenodo.XXXXXXX. On 12 November 2026 that GitHub address still did not resolve, and the Zenodo suffix is a placeholder rather than an issued identifier. Until both exist, the numerical results are reproduced from the files in this project, not from a live Yahoo Finance download.
+
+===== 351 =====
+This script reproduces the empirical S&P 100 analysis, including the August 2026 cross-sectional showcase reported in Tables 10–12 and Figure 4, together with the 63-month holdout evaluation reported in Table 13 and Figure 5.
+
+===== 354 =====
+The covariance-adapted Boston posteriors were produced by python run_boston.py --adaptive. That option calls gibbs_multi_sem in mnreg/model.py with adapt_covariance set, using 8,000 iterations, 4,000 burn-in draws, and four chains, and it writes results/boston_adaptive. The earlier isotropic fits remain in results/boston. The adaptation follows Haario, Saksman, and Tamminen (2001), and the learned covariance is frozen after burn-in (Roberts and Rosenthal, 2009).
+
+===== 363 =====
+Supplementary Figures S1–S8 were removed from the main manuscript. S1–S4 are the Moran size and power plots. S5 and S6 are the simulation holdout charts. S7 is the August 2026 predicted-versus-actual scatter. S8 is the 63-month average RMSE chart. The simulation Gibbs traces and posterior densities remain in the main text as Figures 1 and 2. The Boston holdout scatter is main-text Figure 3, and the month-by-month S&P 100 path is main-text Figure 5.
+
+===== 377 =====
+Supplementary Figure S7.  Predicted versus actual monthly return, August 2026 holdout. The line is predicted = actual.
+
+===== 379 =====
+Supplementary Figure S8.  Average holdout RMSE by model, June 2021–August 2026.

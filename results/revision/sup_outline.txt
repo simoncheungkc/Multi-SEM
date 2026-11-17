@@ -1,0 +1,351 @@
+000 Supplementary Materials
+001 Multiplex Spatial Error Regression: Calibrated Screening, Stable Bayesian Estimation, and Precision Imputation Across Geographic and Network Domains
+002 Simon K. C. Cheung and Tommy K. Y. CheungThe Chinese University of Hong Kong and Swinburne University of Technology
+003 Section S1.  Mathematical Proofs and Spectral Analysis
+004 S1.1 Sufficient [l][1] Bound for Invertibility and Spectral Stability
+005 Let [A][1][A][2][…][A][k] denote [k] nonnegative, row-standardized [n×n] network matrices defined on a common vertex set [V], where [V][=n]. For each network layer [s], every non-isolated node [i] has a row sum equal to one,
+006 [j=1][n][A][s,ij][=1,]
+007 whereas an isolated node has [A][s,ij][=0 ][for all ][j.] Because all entries are nonnegative, the induced [l][∞] matrix norm, defined as the maximum absolute row sum, satisfies
+008 [A][s][∞][=][max][1≤i≤n][j=1][n][A][s,ij][≤1, s=1,…,k.][(S1.1)]
+009 Thus, [A][s] is row-stochastic when all rows sum to one and row-substochastic when isolated nodes produce zero rows. Let [ρ][B][=][max][⁡][μ][:μ∈σ][B] denote the spectral radius of a square matrix [B], where [σ][B] is the set of eigenvalues
+010 [B][λ][=][s=1][k][λ][s][A][s][.]
+011 The corresponding spatial filter is
+012 [V][λ][=][I][n][-B][λ][=][I][n][-][s=1][k][λ][s][A][s][.][(S1.2)]
+013 The matrix [V][λ] is invertible if and only if [0] is not an eigenvalue of [V][λ]. Equivalently, [V][λ] is invertible if and only if [1] is not an eigenvalue of [B][λ]. A convenient stronger condition is [ρ][B][λ][<1.] Under this condition,
+014 [K][λ][=V][λ][-1][=][m=0][∞][s=1][k][λ][s][A][s][m][.][(S1.3)]
+015 To obtain a simple parameter restriction that guarantees this spectral condition, apply the spectral-radius bound, the triangle inequality, and homogeneity of the induced [l][∞] norm:
+016 [ρ][s=1][k][λ][s][A][s][&≤][s=1][k][λ][s][A][s][∞][&≤][s=1][k][λ][s][ ][A][s][∞][&≤][s=1][k][λ][s][.][(S1.4)]
+017 It follows that the [l][1]-norm restriction
+018 [λ][1][=][s=1][k][λ][s][<1][(S1.5)]
+019 implies
+020 [ρ][s=1][k][λ][s][A][s][<1.]
+021 Therefore, Equation (S1.5) is a uniform sufficient condition for spectral stability of the combined network operator. It guarantees that [V][λ] is invertible and that the Neumann series in Equation (S1.3) converges for any collection of non
+022 Moreover, because [V][λ] is non-singular, [V][λ]['][V][λ] is symmetric positive definite. Hence, for [σ][2][>0], the Multi-SEM disturbance covariance matrix [Ω][λ][σ][2][=][σ][2][V][λ]['][V][λ][-1] is also symmetric positive definite. The a
+023 S1.2 Proposition 1: Finite-Sample Null Moments with Isolate Scaling
+024 Proposition 1. Finite-Sample Null Moments and Spherical Representation
+025 Consider the classical linear regression model under the null hypothesis of cross-sectional independence, [Y=Xβ+ϵ, ϵ∼N][0][σ][2][I][n][,] where [X∈][R][n×][p+1] has full column rank [p+1<n]. Define the OLS residual-maker matrix [M=][I][n][-
+026 [A][s][*][=][A][s][+][A][s]['][2][.]
+027 Under [H][0], residual Moran’s [I][s] has the following properties.
+028 1. Exact spherical representation
+029 Let [H∈][R][n×d] contain an orthonormal basis for the column space of [M], so that [M=H][H]['][, ][H]['][H=][I][d][.] Define [B][s][=][H]['][A][s][*][H.] Then
+030 [I][s][=][c][s][e'][A][s][e][e'e][=][c][s][v'][B][s][v]
+031 where [v∼][Uniform][⁡][S][d-1] is uniformly distributed on the unit sphere in [R][d].
+032 2. Geometric independence
+033 Residual Moran’s [I][s] is independent of the residual sum of squares, [I][s][⊥][e]['][e].
+034 3. Exact conditional mean
+035 Conditional on [X] and [A][s],
+036 [E][I][s][X][=][c][s][tr][(M][A][s][)][n-p-1][.]
+037 4. Exact conditional variance
+038 The conditional variance is
+039 [Var][I][s][X][=][c][s][2][2][(n-p-1)(n-p+1)][tr][M][A][s][*][M][2][-][tr][(M][A][s][*][)][2][n-p-1][.]
+040 Both the conditional mean and variance are free of the nuisance parameters [β] and [σ][2]. The scaling constant is [c][s][=][n][S][0,s]. For a network with no isolated nodes, [S][0,s][=n] and [c][s][=1], and the moments reduce to the standa
+041 Proof of Proposition 1
+042 Step 1: Projection onto the residual subspace
+043 Because [M] is real, symmetric, and idempotent with rank [d], there exists an orthonormal matrix [H∈][R][n×d] such that [M=H][H]['][, ][H]['][H=][I][d][.] Define the residual-space coordinate vector [z=][H]['][ϵ.] Since [ϵ∼N][0][σ][2][I][n]
+044 Step 2: Polar decomposition and spherical representation
+045 Because [z] is spherically Gaussian, write [z=σRv,] where
+046 [R][2][=][z]['][z][σ][2][∼][χ][d][2]
+047 and
+048 [v=][z][z][2][∼][Uniform][⁡][S][d-1][.]
+049 For a spherical Gaussian vector, the radius [R] and direction [v] are independent. The residual sum of squares is [e]['][e=][z]['][z=][σ][2][R][2][.] Because a scalar quadratic form depends only on the symmetric part of its matrix, [e]['][A
+050 [e'][A][s][e][e'e][=v'][B][s][v,]
+051 Hence the unscaled ratio equals [v'][B][s][v], and the Moran statistic used in the paper is [I][s][=][c][s][v'][B][s][v] with [c][s][=][n][S][0,s]. This representation also establishes the independence result. The ratio depends only on the 
+052 Step 3: Exact first moment
+053 For a vector [v] uniformly distributed on [S][d-1], rotational symmetry gives
+054 [E][v][i][v][j][=][δ][ij][d][,]
+055 where [δ][ij] is the Kronecker delta. Equivalently,
+056 [E][v][v]['][=][1][d][I][d][.]
+057 Therefore,
+058 [E][I][s][X][=][c][s][E][[v'][B][s][v]=][c][s][tr][(][B][s][)][d][.]
+059 Now,
+060 [tr][⁡][B][s][&=][tr][⁡][H]['][A][s][*][H][&=][tr][⁡][H][H]['][A][s][*][&=][tr][⁡][M][A][s][*][.]
+061 Because [M] is symmetric, the skew-symmetric part of [A][s] contributes zero to the trace, so [tr][⁡][M][A][s][*][=][tr][⁡][M][A][s][.] Hence,
+062 [E][I][s][X][=][c][s][tr][(M][A][s][)][n-p-1][.]
+063 Step 4: Exact second moment and variance
+064 For [v∼][Uniform][⁡][S][d-1], the fourth-order spherical moments satisfy
+065 [E][v][i][v][j][v][k][v][l][=][δ][ij][δ][kl][+][δ][ik][δ][jl][+][δ][il][δ][jk][d][d+2][.]
+066 For symmetric [B][s], this implies
+067 [E][v]['][B][s][v][2][=][tr][⁡][B][s][2][+2][tr][⁡][B][s][2][d][d+2][.]
+068 Furthermore, [tr][⁡][B][s][=][tr][⁡][M][A][s][*] and [tr][⁡][B][s][2][=][tr][⁡][M][A][s][*][M][2]. Subtracting the squared mean gives
+069 [Var][I][s][X][=][c][s][2][2][d(d+2)][tr][M][A][s][*][M][2][-][tr][(M][A][s][*][)][2][d][.]
+070 Finally, substituting [d=n-p-1, d+2=n-p+1,] together with the trace identities above, yields
+071 [Var][I][s][X][=][c][s][2][2][(n-p-1)(n-p+1)][tr][M][A][s][*][M][2][-][tr][(M][A][s][*][)][2][n-p-1][.]
+072 This proves Proposition 1.
+073 Remark 1. Rayleigh-Quotient Representation
+074 Because [B][s]is symmetric, it has the eigendecomposition [B][s][=Q][Θ][s][Q]['][,] where [Θ][s][=][diag][⁡][θ][s,1][…][θ][s,d][.] The values [θ][s,1][,…,][θ][s,d] are the eigenvalues of [B][s][=][H]['][A][s][*][H]. Equivalently, they descr
+075 Define [w=][Q]['][v.] Because orthogonal transformations preserve the uniform distribution on the unit sphere, [w∼][Uniform][⁡][S][d-1][.] Hence,
+076 [I][s][=][c][s][j=1][d][θ][s,j][w][j][2][,        ][j=1][d][w][j][2][=1]
+077 with
+078 [j=1][d][w][j][2][=1.]
+079 Thus, Moran’s [I][s] is [c][s] times a Rayleigh quotient, or equivalently [c][s] times a random weighted average of the eigenvalues [θ][s,j]. The squared spherical coordinates satisfy
+080 [w][j][2][≥0, ][j=1][d][w][j][2][=1,]
+081 and are therefore dependent. More precisely, [w][1][2][…][w][d][2][∼][Dirichlet][1][2][…][1][2][.]
+082 An equivalent representation can be obtained from independent standard-normal variables [ζ][1][,…,][ζ][d][~N][0][1][.] Since
+083 [w][j][2][=][ζ][j][2][k=1][d][ζ][k][2][,]
+084 Because [I][s][=][c][s][v'][B][s][v], the isolate factor remains in the normal-variable form. We obtain
+085 [I][s][=][c][s][j=1][d][θ][s,j][ζ][j][2][k=1][d][ζ][k][2]
+086 This representation makes clear that the finite-sample distribution of [I][s] is determined by the spectrum [θ][s,1][…][θ][s,d][.] Define the standardized residual Moran statistic as
+087 [Z][s][=][I][s][-E][I][s][X][Var][⁡][I][s][X][.]
+088 Because both the exact conditional mean and variance are free of [β] and [σ][2], [Z][s] is also free of these nuisance parameters under [H][0]. However, [Z][s] is not an exact finite-sample pivot, because its full distribution continues to 
+089 Corollary 1. Asymptotic Reference Distribution
+090 Assume that the absolute row and column sums of [A][s] and [M] remain uniformly bounded as [n→∞], that
+091 [lim][n→∞][1][n][tr][⁡][M][A][s][*][M][2][>0,]
+092 and that [X] satisfies the required Grenander regularity conditions. Then the standardized residual Moran statistic is asymptotically standard normal: [Z][s][d][N][0][1][, n→∞.] Consequently, the two-sided Gaussian p-value [p][s][=2][1-][Φ]
+093 S1.3 Asymptotic Normality of the Residual Moran Score
+094 Under standard spatial regularity conditions, the standardized residual Moran statistic has an asymptotic standard normal distribution. Specifically, assume that the absolute row and column sums of [A][s] and [M] remain uniformly bounded as
+095 Under the null hypothesis of cross-sectional independence, the OLS residual vector satisfies [e=Mϵ], allowing the quadratic form in the numerator of residual Moran's [I][s] to be expressed directly in terms of the innovations: [e'][A][s][*]
+096 [1][n][e'e=][1][n][ϵ'Mϵ][p][σ][2][ ][as ][n→∞.]
+097 Applying the central limit theorem for linear-quadratic forms (Kelejian & Prucha, 2001) to the centered and scaled numerator [ϵ'M][A][s][*][Mϵ], and combining this asymptotic normality with the denominator's probability limit via Slutsky’s 
+098 [Z][s][=][I][s][-][E][I][s][X][Var][⁡][I][s][X][d][N][0][1][, n→∞.][(S1.17)]
+099 Thus, under the stated regularity conditions, the standardized residual Moran statistic is asymptotically standard normal. Consequently, the two-sided Gaussian [p]-value
+100 [p][s][=2][1-][Φ][Z][s]
+101 is asymptotically distributed as [Uniform][⁡][0][1] under the null hypothesis. It is important to distinguish this asymptotic result from finite-sample calibration. As shown in Section S1.2, the exact finite-sample distribution of [I][s], a
+102 Section S3.2 documents this effect for heavy-tailed power-law networks, where the analytical Gaussian test exhibits rejection rates above the nominal significance level. Accordingly, asymptotic uniformity of the Gaussian [p]-values should n
+103 S1.4 Equivalence of Covariance- and Precision-Based Kriging
+104 Partition the [n]entities into a holdout set [S], containing [n][*] nodes, and an observed training set [T], containing [n][t] nodes, so that [n=][n][*][+][n][t][.] Under the Multi-SEM, the disturbance vector [u=][u][*][u][t] has covariance
+105 [Q=][Q][**][Q][*t][Q][t*][Q][tt][.][(S1.18)]
+106 Since [Q=][Ω][-1], partition the covariance matrix in the same way: [Ω][=][Ω][**][Ω][*t][Ω][t*][Ω][tt][.] Because [Ω][Q=][I][n][,] we have
+107 [Ω][**][Ω][*t][Ω][t*][Ω][tt][Q][**][Q][*t][Q][t*][Q][tt][=][I][n][*][0][0][I][n][t][.][(S1.19)]
+108 Conditional Mean Identity
+109 Consider the lower-left block of Equation (S1.19). Matrix multiplication gives [Ω][t*][Q][**][+][Ω][tt][Q][t*][=0.] Therefore,
+110 [Ω][tt][Q][t*][=-][Ω][t*][Q][**][.][(S1.20)]
+111 Pre-multiplying by [Ω][tt][-1] and post-multiplying by [Q][**][-1] gives
+112 [Q][t*][Q][**][-1][=-][Ω][tt][-1][Ω][t*][.][(S1.21)]
+113 Both [Ω] and [Q=][Ω][-1] are symmetric, so [Ω][t*]['][=][Ω][*t][, ][Q][t*]['][=][Q][*t][.] Taking the transpose of Equation (S1.21) therefore yields
+114 [Ω][*t][Ω][tt][-1][=-][Q][**][-1][Q][*t][.][(S1.22)]
+115 Equation (S1.22) shows that the covariance-based kriging weight [Ω][*t][Ω][tt][-1] is exactly equal to the corresponding precision-based weight [-][Q][**][-1][Q][*t][.]
+116 Conditional Covariance Identity
+117 For a partitioned multivariate Gaussian distribution, the conditional covariance of the holdout disturbances [u][*], given the observed training disturbances [u][t], is the Schur complement [Ω][**][-][Ω][*t][Ω][tt][-1][Ω][t*][.] The block i
+118 [Ω][**][-][Ω][*t][Ω][tt][-1][Ω][t*][=][Q][**][-1][.][(S1.23)]
+119 Thus, [Cov][u][*][u][t][⁡=][Q][**][-1]. Equations (S1.22) and (S1.23) therefore provide both the conditional mean and conditional covariance directly from the precision matrix.
+120 Precision-Based Kriging Predictor
+121 The covariance-form spatial BLUP for the holdout outcomes is [Y][*][=][X][*][β][+][Ω][*t][Ω][tt][-1][Y][t][-][X][t][β][.] Using Equation (S1.22), [Ω][*t][Ω][tt][-1][=-][Q][**][-1][Q][*t][,] we obtain the equivalent precision-form predictor
+122 [Y][*][&=][X][*][β][+][Ω][*t][Ω][tt][-1][Y][t][-][X][t][β][&=][X][*][β][-][Q][**][-1][Q][*t][Y][t][-][X][t][β][.][(S1.24)]
+123 Hence, the covariance- and precision-based kriging predictors are algebraically identical. The computational advantage of the precision formulation is that the covariance representation requires solving a system involving [Ω][tt][∈][R][n][t
+124 S1.4.1 Implication for Training Likelihood: Coherent Marginal vs. Induced Subgraph
+125 The coherent training model is the marginal [Y][t][∼][N][(][X][t][β,][P][T][-1][)] with [P][T][=][Q][tt][-][Q][t*][Q][**][-1][Q][*t] and [Q=][σ][-2][V][λ]['][V][λ]. The archive instead uses induced-subgraph estimation with full-graph imputa
+126 S1.5 Invariance of Diagonal-Purged Affiliation Resolvents
+127 Consider an affiliation network consisting of [M] disjoint groups, where group [m] contains [n][m][≥2] nodes. Because self-loops are purged before row-standardization, each group is represented by the zero-diagonal clique matrix [C][m][=][J
+128 Two resolvent transformations have to be distinguished.
+129 Unpurged resolvent. Powers of the clique matrix satisfy [C][m][l][∈][span][{][J][n][m][,][I][n][m][}] for every [l≥1]. The unpurged series [G][C][m][=][l=1][∞][α][l-1][C][m][l][=][C][m][(I-α][C][m][)][-1] remains in that span. Higher-order 
+130 Purged resolvent, which is the operator used in Multi-SEM. Every candidate matrix is forced to a zero diagonal, [A][s,][ii][=0]. Setting the diagonal of [G][C][m] to zero and then row-standardizing reproduces the base clique, [G][(][C][m][)
+131 The identity holds, up to numerical error, in both empirical applications. For the largest Boston municipality, a block of [n][m][=30] tracts with damping [α=0.5], the largest absolute entrywise difference between [G][(C)] and [C] is [1.4×]
+132 Section S2.  Complete Bayesian Derivations and Algorithms
+133 S2.1 Conditional Posterior Distributions of [β] and [σ][2]
+134 Under the Multiplex Spatial Error Model (Multi-SEM),
+135 [Y=Xβ+u, V][λ][u=ϵ, ϵ∼N][0][σ][2][I][n][,]
+136 where the multiplex spatial filter is
+137 [V][λ][=][I][n][-][s=1][k][λ][s][A][s][.]
+138 For nonnegative row-stochastic or row-substochastic network matrices, the sufficient stability condition [λ][1][=][s=1][k][λ][s][<1] guarantees that [V][λ] is invertible. The transformation [u⟼ϵ=V][λ][u] is therefore one-to-one, with absolu
+139 [det][V][λ][=][det][I][n][-][s=1][k][λ][s][A][s][.]
+140 The conditional likelihood is consequently
+141 [p][Y][X,β,][σ][2][,λ][=][2π][σ][2][-n/2][det][V][λ][exp][-][1][2][σ][2][Y-Xβ]['][V][λ]['][V][λ][Y-Xβ][ ][S2.1]
+142 Prior Specification
+143 We assign a multivariate Gaussian prior to the regression coefficients,
+144 [β∼N][μ][0][Σ][0][, ][μ][0][=][0][p+1][, ][Σ][0][=][c][β][I][p+1][,]
+145 an inverse-gamma prior to the innovation variance, [σ][2][∼][InvGamma][⁡][α][0][γ][0][,] with density
+146 [p][σ][2][=][γ][0][α][0][Γ][α][0][σ][2][-][α][0][+1][exp][-][γ][0][σ][2][,]
+147 and a zero-centered Gaussian prior for [λ], truncated to the [l][1] stability region,
+148 [p][λ][∝][exp][-][ξ][2][λ]['][λ][I][s=1][k][λ][s][<1][.]
+149 Throughout the analysis, [c][β][=100], [α][0][=][γ][0][=0.001], and [ξ=1]. We assign [σ][2][∼][InvGamma][(0.001,0.001)], a conventional diffuse scale prior in spatial econometrics (LeSage & Pace, 2009); prior sensitivity reported in Table S
+150 [p][β,][σ][2][,λ][Y,X][∝&][det][V][λ][σ][2][-][n/2+][α][0][+1][&×][exp][-][1][σ][2][γ][0][+][1][2][Y-Xβ]['][V][λ]['][V][λ][Y-Xβ][&×][exp][-][1][2][β-][μ][0]['][Σ][0][-1][β-][μ][0][-][ξ][2][λ]['][λ][&×I][s=1][k][λ][s][<1][.][  ][S2.2]
+152 Full Conditional Posterior Distribution of [β ]
+153 Conditional on [σ][2][λ], terms in Equation (S2.2) that do not involve [β] can be omitted. Therefore,[p][β][Y,X,][σ][2][,λ][∝][exp][-][1][2][1][σ][2][Y-Xβ]['][V]['][V][Y-Xβ][+][β-][μ][0]['][Σ][0][-1][β-][μ][0][  ][S2.2a]
+154 where [V=V][λ] for notational simplicity. Define the spatially filtered variables [Y][=V][λ][Y, ][X][=V][λ][X.]
+155 Conditional on [λ], the model can therefore be written as an ordinary Gaussian regression in the filtered variables: [Y][=][X][β+ϵ.] The quadratic form in Equation (S2.2a) becomes
+156 [Q][β][=&][1][σ][2][Y][-][X][β]['][Y][-][X][β][+][β-][μ][0]['][Σ][0][-1][β-][μ][0][=&][1][σ][2][Y]['][Y][-2][β]['][X]['][Y][+][β]['][X]['][X][β][&+][β]['][Σ][0][-1][β-2][β]['][Σ][0][-1][μ][0][+][μ][0]['][Σ][0][-1][μ][0][=&][β]['][Σ][0][-1][
+157 where [C][0][=][1][σ][2][Y]['][Y][+][μ][0]['][Σ][0][-1][μ][0] does not depend on [β]. Completing the square shows that the full conditional posterior of [β] is multivariate Gaussian:
+158 [β∣Y,X,][σ][2][,λ∼N][μ][β][Σ][β][.][(S2.3)]
+159 The conditional posterior covariance matrix is
+160 [Σ][β][=][Σ][0][-1][+][σ][-2][X]['][V][λ]['][V][λ][X][-1][,][(S2.4)]
+161 and the conditional posterior mean is
+162 [μ][β][=][Σ][β][Σ][0][-1][μ][0][+][σ][-2][X]['][V][λ]['][V][λ][Y][.][(S2.5)]
+163 The two components of the posterior precision,
+164 [Σ][β][-1][=][Σ][0][-1][prior precision][+][σ][-2][X]['][V]['][VX][information from filtered data][,]
+165 show explicitly how prior information and the spatially filtered likelihood combine.
+166 Intercept Information Near the Boundary
+167 When all relevant network layers are fully row-stochastic, [A][s][1][n][=][1][n][,] and therefore
+168 [V][λ][1][n][=][1-][s=1][k][λ][s][1][n][.]
+169 As [s=1][k][λ][s][→1][,] the filtered intercept column contracts toward zero. Consequently,
+170 [1][n]['][V]['][V][1][n][=n][1-][s=1][k][λ][s][2][→0,]
+171 and the likelihood contributes progressively less information about the intercept. The prior precision [Σ][0][-1][=0.01][I][p+1] provides positive regularization in Equation (S2.4), helping to keep the posterior precision matrix numerically
+172 When some network layers contain isolates, the simple identity
+173 [V][λ][1][n][=][1-][s][λ][s][1][n]
+174 does not hold globally. The corresponding row-specific qualification is discussed in Section 3.3 of the main text.
+175 Full Conditional Posterior Distribution of [σ][2]
+176 Conditional on [β][λ], retain from Equation (S2.2) only the terms involving [σ][2]:
+177 [p][σ][2][Y,X,β,λ][∝][σ][2][-][n][2][+][α][0][+1][×][exp][-][1][σ][2][γ][0][+][1][2][Y-Xβ]['][V][λ]['][V][λ][Y-Xβ][ ][S2.6a]
+178 Define the spatially filtered residual vector [e][λ][=V][λ][Y-Xβ][.] Then
+179 [e][λ]['][e][λ][=][Y-Xβ]['][V][λ]['][V][λ][Y-Xβ][.]
+180 Equation (S2.6a) is therefore the kernel of an inverse-gamma distribution:
+181 [σ][2][∣Y,X,β,λ∼][InvGamma][⁡][α][σ][γ][σ][,][(S2.6)]
+182 where [α][σ][=][α][0][+][n][2]  and
+183 [γ][σ][&=][γ][0][+][1][2][e][λ]['][e][λ][&=][γ][0][+][1][2][Y-Xβ]['][V][λ]['][V][λ][Y-Xβ][.]
+184 Under the inverse-gamma parameterization used here, [γ][σ] is the scale parameter. Sampling [σ][2] can be implemented through its reciprocal. If [w=][1][σ][2][,][ ]then
+185 [w∼][Gamma][shape][=][α][σ][, ][rate][=][γ][σ][,]
+186 and the Gibbs update is obtained by setting [σ][2][=][1][w][. ]Thus, both [β] and [σ][2] can be updated directly using Gibbs steps. Only the network autoregressive vector [λ] requires a Metropolis-Hastings update because its full conditiona
+187 S2.2 Metropolis-within-Gibbs Sampling for [λ] on the [l][1] Unit Ball
+188 Conditional on the current values of [β] and [σ][2], define the unfiltered regression residual vector [e=Y-Xβ.] The full conditional posterior density of the multiplex autoregressive parameter vector [λ=][λ][1][…][λ][k]['] is
+189 [p][λ][Y,X,β,][σ][2][∝][det][V][λ][exp][-][1][2][σ][2][e]['][V][λ]['][V][λ][e-][ξ][2][λ][2][2][I][s=1][k][λ][s][<1][ ][S2.7]
+190 where
+191 [V][λ][=][I][n][-][s=1][k][λ][s][A][s][.]
+192 The indicator restricts the support of the posterior to the sufficient stability region [D][l][1][=][λ∈][R][k][:][λ][1][<1][.] Because [λ] enters nonlinearly through both the determinant and the filtered quadratic form, Equation (S2.7) does
+193 At MCMC iteration [t], given the current value [λ][(t-1)], propose [λ][*][∼N(][λ][(t-1)][,][τ][t][2][Σ][t][)]. For the first 50 burn-in draws, [Σ][t][=][I][k]. While burn-in continues after that point, [Σ][t][=][2.38][2][k][Cov][(][λ][(0:t-
+194 Step 1: Check the [l][1] Stability Constraint
+195 Before evaluating the likelihood, calculate [λ][*][1][=][s=1][k][λ][s][*][.] If [λ][*][1][≥1,] then the proposed value lies outside the support of the truncated prior. It is therefore rejected immediately: [α=0, ][λ][t][=][λ][t-1][.] This e
+196 Step 2: Compute the Acceptance Probability
+197 Because the Gaussian random-walk proposal is symmetric, [q][λ][*][λ][t-1][=q][λ][t-1][λ][*][,] the proposal densities cancel from the Metropolis-Hastings ratio. Define
+198 [Q][λ][=][e]['][V][λ]['][V][λ][e=][V][λ][e][2][2][.]
+199 Also define [Δ][log][det][V][=][log][det][V][λ][*][-][log][det][V][λ][t-1] and [Δ][Q=Q][λ][*][-Q][λ][t-1][.] The log posterior ratio is then
+200 [Δ][log][π][=][Δ][log][det][V][-][Δ][Q][2][σ][2][-][ξ][2][λ][*][2][2][-][λ][t-1][2][2][.]
+201 Hence, the Metropolis-Hastings acceptance probability is
+202 [α=][min][1][exp][Δ][log][det][V][-][Δ][Q][2][σ][2][-][ξ][2][λ][*][2][2][-][λ][t-1][2][2][.][(S2.8)]
+203 A draw [u∼][Uniform][⁡][0][1] is then generated. If [u≤α,] the proposal is accepted: [λ][t][=][λ][*][.] Otherwise, [λ][t][=][λ][t-1][.]
+204 Algorithm S1. Adaptive Metropolis-within-Gibbs sampler for Multi-SEM
+205 Input: [Y,X,][A][1][…][A][k], prior hyperparameters, [N][iter], [N][burn], and [α][*][=0.30].
+206 Set [τ][0][=0.08]. For the covariance-adapted kernel used in the Boston application, [Σ][t][=][I][k] during the first 50 burn-in iterations and [Σ][t][=][2.38][2][k][Cov][(][λ][(0:t-1)][)+][10][-5][I][k] after that, until burn-in ends. The 
+207 For [t=1,…,][N][iter]:
+208 Set the residual [e=Y-X][β][(t-1)] from the coefficients carried into the iteration.
+209 Propose [λ][*][∼N(][λ][(t-1)][,][τ][t][2][Σ][t][)], where [Σ][t][=][I][k] for the first 50 burn-in iterations and [Σ][t][=(][2.38][2][/k)][Cov][(][λ][(0:t-1)][)+][10][-5][I][k] during the remainder of burn-in. After burn-in, [Σ][t] and [τ][
+210 If [λ][*][1][=][s=1][k][λ][s][*][≥1], reject the proposal: set [λ][(t)][=][λ][(t-1)] and record [a][t][=0].
+211 Otherwise evaluate Equation (S2.8) at the current [σ][2] and residual [e]. Draw [u][t][∼][Uniform][(0,1)]. Accept [λ][(t)][=][λ][*] when [u][t][≤][α][t]; otherwise keep [λ][(t-1)].
+212 During burn-in, and only when 50 proposals have accumulated in the current window, update [τ][t] from that window's acceptance rate, using the same 0.85 and 1.15 factors and the target 0.30. Restrict [τ][t] to [[][10][-4][,1]]. At the end o
+213 Draw [β][(t)][∼][N][(][μ][β][(t)][,][Σ][β][(t)][)] from Equations (S2.4)–(S2.5), using the accepted [λ][(t)] and the current [σ][2].
+214 Draw [σ][2(t)] from the inverse-gamma conditional in Equation (S2.6), then refresh [e=Y-X][β][(t)].
+215 After burn-in, retain [(][β][(t)][,][σ][2(t)][,][λ][(t)][)]. Draws inside the burn-in are discarded.
+216 Once burn-in ends, [Σ][t] and [τ][t] stay fixed. The kernel on the retained draws is time-homogeneous (Roberts and Rosenthal, 2009). The function that implements this choice is gibbs_multi_sem in mnreg/model.py. The Boston run sets adapt_co
+217 The coded chain therefore proposes [λ] before drawing [β] and [σ][2]. Adaptation of [τ][t] occurs strictly inside the burn-in.
+218 Run the algorithm independently across parallel chains. Assess convergence using split-[R] and ESS, and combine the retained draws only after satisfactory convergence has been established.
+221 Section S3.  Extended Simulation Studies
+222 S3.1 Topological Characteristics of the Synthetic Networks
+223 Table 2 in the main text defines the five synthetic networks used in the simulation study, including their generating mechanisms, roles in the data-generating process, and true network autoregressive parameters. The corresponding realized g
+224 Table S1.  Realized graph topology at n = 200.
+225 [TABLE] Network | Role | Mean degree | Max degree | Isolates | Clustering | Poisson ([d = 8]) | Active (0.40)
+227 S3.2–S3.3 Finite-Sample Size and Statistical Power
+228 The empirical size results should be evaluated separately for the homogeneous Poisson network and the heterogeneous power-law network. All rejection frequencies are based on 500 Monte Carlo replications using the nominal significance level 
+229 [58][500][=0.116.]
+230 These results show that the asymptotic Gaussian Moran test can be liberal in finite samples for strongly hub-dominated networks. The distortion is consistent with slower convergence to the normal reference distribution when the projected ne
+231 Importantly, the Benjamini–Hochberg FDR procedure does not correct this marginal size distortion. FDR adjustment addresses the multiple-testing problem after the individual [p]-values have been obtained; it does not repair an individual net
+232 Supplementary Figure S3 reports empirical size and power for [n=100], while Table S2 provides the corresponding exact rejection counts and rejection frequencies across the 500 Monte Carlo replications at nominal [α=0.05]. For the larger sam
+233 [Z][s][=][I][s][-][E][I][s][X][Var][⁡][I][s][X][,]
+234 under the null hypothesis is further summarized in Table S3. Together, these results distinguish two aspects of screening performance. Power measures the ability to detect genuinely active network layers, whereas size measures the probabili
+235 Table S2.  Empirical size and power (n = 100, 500 replications, α = 0.05).
+236 [TABLE] Network | Role | Rejections (null) | Rejections (active DGP) | Poisson [(d = 8)] | Active | 29/500 (0.058) | 261/500 (0.522)
+238 Table S3.  Standardized Moran scores [Z][s] under the null DGP (500 replications).
+239 [TABLE] Network | [n] | Mean [Z][s] | SD [Z][s] | Skewness | Kurtosis | Poisson [(d = 8)] | 200
+244 S3.4–S3.6 Parameter Recovery, Kriging, and Prior Sensitivity
+245 Parameter Recovery and MCMC Diagnostics
+246 Table 4 in the main text reports posterior summaries for the [n=200] five-network Multi-SEM experiment. Estimation uses four parallel MCMC chains, with 6,000 iterations per chain and the first 3,000 iterations discarded as burn-in. All repo
+247 Figure 1 presents the corresponding multi-chain trace plots, with the four chains shown in blue, orange, green, and red. These plots provide a visual assessment of chain overlap and mixing. Figure 2 displays the marginal posterior densities
+248 Holdout Prediction and Kriging
+249 Predictive performance is evaluated using 30 independent holdout experiments at [n=200,] with an 80/20 node split between the training and holdout samples. Table 5 in the main text reports the resulting holdout performance metrics across th
+250 Prior Sensitivity
+251 Finally, Table S4 examines the sensitivity of posterior inference to alternative prior specifications. The table reports posterior means and corresponding 95% posterior credible intervals under Gaussian prior precisions [ξ∈][0.1][1.0][5.0][
+252 Table S4.  Prior sensitivity on the n = 200 synthetic Multi-SEM dataset.
+253 [TABLE] Prior | [λ][1] (true 0.40) | [λ][2] (true 0.35) | [σ][2] (true 1.0) | Baseline: [ξ=1], [α=γ=0.001] | 0.332 (0.093, 0.559) | 0.337 (0.162, 0.504) | 1.160 (0.943, 1.431)
+255 Section S4.  Empirical Manifests and Data Specifications
+256 S4.1 Boston Housing Data Specification
+257 The Boston file is StatLib boston_corrected.txt, saved as data/boston_corrected.txt. It has 506 tracts and 92 town codes, numbered 0 through 91. The outcome is the natural logarithm of corrected median value. Sixteen tracts still have corre
+258 Four regressors do not vary inside any municipality: the large-lot zoning share, non-retail business acreage, the property-tax rate, and the pupil–teacher ratio. A municipal fixed-effects regression therefore absorbs those four columns into
+259 Table S4.1. Full-sample moments of the ten Boston regressors (n = 506). The standard deviation uses the divisor n − 1. The regression standardizes each column inside the training sample of each split, so these are the unstandardized moments
+260 [TABLE] Variable | Unit | Mean | SD | Rooms  | rooms per dwelling | 6.285 | 0.703
+262 Seventeen towns contain a single tract and are isolates in the town network: Cohasset, Dover, Duxbury, Hamilton, Hanover, Hull, Lincoln, Manchester, Medfield, Middleton, Millis, Nahant, Norfolk, Norwell, Sherborn, Topsfield, and Wenham. The
+263 The tract-level holdout prediction errors for Split 5 are mapped in Supplementary Figure S9, while the corresponding predicted-versus-actual scatter comparisons are shown in main-text Figure 3.
+264 S4.2 Constituent Listing and Yahoo Finance Classification
+265 The empirical analysis uses the 100 S&P100 equities in the replication sample. Table S5 lists each ticker, the company name, and the sector and industry labels that define [A][sec] and [A][ind]. Those labels are the Yahoo Finance sector and
+266 Table S5. S&P100 constituents, sector and industry labels used to build the affiliation networks, and industry-network isolate flags. Isolate status (17 firms) matches the zero rows of A_ind.
+267 [TABLE] Ticker | Company | Sector | Industry | Isolate? | AAPL | Apple Inc. | Technology
+269 S4.3 Construction of Firm-Level Covariates
+270 Table S6 reports descriptive statistics for the standardized explanatory variables used over the 63-month evaluation period. The model contains four firm-level predictors:
+271 [X][1][=][lagged monthly return][,][ ]
+272 [X][2][=][realized volatility][,]
+273 [X][3][=][12-minus-1 momentum][,]
+274 [X][4][=][lagged log equity price][.]
+275 The fourth covariate is lagged log equity price, defined in Section 8.2 of the main text. It is not a measure of firm size.
+276 Table S6.  Cross-sectional feature statistics across 63 months (monthly averages).
+277 [TABLE] Feature | Raw mean | Raw SD | Min | Max | Standardized | Lagged monthly return ([X][1]) | 0.012
+279 S4.4 August 2026 Showcase
+280 The August 2026 cross-section provides an archived illustrative snapshot of Multi-SEM estimation, posterior inference, and precision-form imputation. Table 10 in the main text reports the residual Moran screening results. At the FDR thresho
+281 Table 11 reports the Bayesian posterior estimates obtained from the 80 training equities. The posterior means of the two network coefficients satisfy
+282 The reported fit is Induced Subgraph Estimation with Full-Graph Imputation. Parameters are estimated on the re-row-standardized training blocks, and the holdout mean uses the full-graph precision. The coherent marginal likelihood is the Sch
+283 [s][λ][s][=0.390,]
+284 which lies inside the sufficient stability region [λ][1][<1.] The marginal 95% posterior credible intervals are [λ][sec][:][-0.185,0.559] and [λ][ind][:][-0.063,0.418][.] Both intervals contain zero. Thus, the marginal 95% credible interval
+285 Additional information is provided by the posterior probabilities of positive network dependence. These probabilities are calculated directly from the retained MCMC draws as
+286 [P][λ][s][>0][Y][=][1][M][m=1][M][I][λ][s][m][>0][.]
+287 For August 2026, [P][λ][sec][>0][Y][=0.868,] while [P][λ][ind][>0][Y][=0.934.] Thus, although both marginal 95% credible intervals include zero, the posterior distributions place substantial probability on positive residual network dependen
+288 [L][m][=][s][λ][s][m][.]
+289 Across the retained posterior draws, [E][L][Y][=0.430,] the posterior 95th percentile is [L][0.95][=0.661,] and [P][L>0.95][Y][=0.00025.] These results indicate that the August posterior is concentrated well inside the imposed [l][1] stabil
+290 [0.0637-0.0576][0.0637][×100≈9.7%.]
+291 Thus, the August results provide two complementary forms of evidence: posterior evidence of positive residual network dependence and improved contemporaneous holdout prediction.
+292 S4.5 Longitudinal 63-Month Holdout Performance
+293 Table 13 reports aggregate holdout performance over 63 consecutive months from June 2021 through August 2026. Figure 5 plots the month-by-month holdout RMSE, while Supplementary Figure S8 compares the mean RMSE across the competing model sp
+294 At the monthly level, Multi-SEM has a lower RMSE than OLS in [44][ of ][63] months and a higher RMSE in 19 months, corresponding to a win rate of
+295 [44][63][=69.8%.]
+296 A two-sided binomial sign test of equal win probability gives [p=0.0022.] We also compare the monthly mean squared prediction losses by defining
+297 [d][t][=RMS][E][OLS][,t][2][-RMS][E][Multi][,t][2][.]
+298 Across the 63 months, [d][=0.000403,] and the conventional paired test gives [t][62][=3.60, p=0.00063.] The mean monthly RMSE difference, [RMS][E][OLS][,t][-RMS][E][Multi][,t][,] is [0.00278,] with a 95% paired-[t] confidence interval of [0
+299 S4.6 Network-Selection Dynamics
+300 The network layers retained by residual Moran screening change across the 63 months. The return-correlation network or its resolvent is selected in 51 of the 63 months (81.0%), the Yahoo Finance sector network in 35 months (55.6%), and the 
+302 Section S5.  Software, Scaling, and Replication
+303 S5.1 Replication Manifest
+304 The replication package contains the scripts, data caches, and supporting modules required to reproduce the simulation and empirical results. Table S7 lists the scripts and modules and their primary functions.
+305 Together, these materials provide the computational workflow used to generate the tables, figures, simulation results, posterior estimates, and predictive evaluations reported in the study.
+306 Table S7.  Code repository module reference.
+307 [TABLE] Path | Primary functions | Dependencies | mnreg/model.py | moran screening, Cliff–Ord moments, Gibb | numpy, scipy | mnreg/networks.py | ER / power-law, k-NN correlation, affili
+309 S5.2 Dense LU versus Sparse Log-Determinant Estimation
+310 Evaluation of the spatial-filter log absolute determinant,
+311 [ln][det][I][n][-][s=1][k][λ][s][A][s][,]
+312 is one of the principal computational operations in Multi-SEM estimation.
+313 For moderate network sizes, the determinant is evaluated directly using dense LU factorization. For larger sparse networks, polynomial or stochastic-trace approximations can provide a more scalable alternative.
+314 Table S8 compares CPU wall-clock time per proposal for these log-determinant calculations across network sizes [n]. Timings represent average CPU wall-clock execution time per proposal across 10,000 evaluations on an AMD Ryzen 9 5950X (sing
+316 Table S8. Log-determinant wall-clock benchmarks. Timings are average CPU wall-clock time per proposal across 10,000 evaluations on an AMD Ryzen 9 5950X (single-thread, 3.4 GHz, dense LU via OpenBLAS), including a 1,000-iteration warm-up.
+317 [TABLE] [n] | Dense LU (slogdet) | Chebyshev (M = 30) | Hutchinson (B = 50) | 100 | 0.082 ms | 0.412 ms | 0.850 ms
+319 S5.3 Reproduction Instructions
+320 The complete numerical analysis can be reproduced using the following workflow.
+321 Step 1: Configure the computational environment
+322 The replication code requires Python 3.9 or later together with the required numerical, data-processing, visualization, and financial-data packages. The dependencies can be installed using:
+323 Shell
+324 pip install numpy scipy pandas matplotlib yfinance
+325 Step 2: Reproduce the synthetic simulation study
+326 Run:
+327 Shell
+328 python run_simulation.py
+329 This script executes the synthetic-network simulation pipeline and reproduces Tables 2–5, main-text Figures 1 and 2, and Supplementary Figures S1–S6, including the network-screening experiments, parameter-recovery analysis, and holdout pred
+330 Step 3: Reproduce the S&P 100 empirical analysis
+331 Run:
+332 Shell
+333 python run_sp100.py
+334 This script reproduces the empirical S&P 100 analysis, including the August 2026 cross-sectional showcase reported in Tables 10–12 and Figure 4, together with the 63-month holdout evaluation reported in Table 13 and Figure 5.
+335 Step 3b: Reproduce the Boston housing analysis
+336 Run python run_boston.py, python plot_boston_split5.py, and python build_boston_docx.py. run_boston.py reads data/boston_corrected.txt, screens and estimates on the 405 training tracts of each split, and writes results/boston/split_00.json 
+337 The covariance-adapted Boston posteriors were produced by python run_boston.py --adaptive. That option calls gibbs_multi_sem in mnreg/model.py with adapt_covariance set, using 8,000 iterations, 4,000 burn-in draws, and four chains, and it w
+338 Step 4: Reproduce the complete analysis
+339 Alternatively, the simulation and empirical pipelines can be executed sequentially using the master script:
+340 Shell
+341 python run_all.py
+342 This script runs both analysis pipelines in the required order and reproduces the principal numerical results reported in the main text.
+343 Taken together, Tables S7 and S8 and the reproduction scripts provide the information required to trace the computational workflow from data construction and synthetic-network generation through Multi-SEM estimation, posterior inference, ne
+344 S6. Figures Moved from the Main Text
+345 Supplementary Figures S1–S8 were removed from the main manuscript. S1–S4 are the Moran size and power plots. S5 and S6 are the simulation holdout charts. S7 is the August 2026 predicted-versus-actual scatter. S8 is the 63-month average RMSE
+347 Supplementary Figure S1.  Type I error and power of residual Moran’s I at[n = 200] (500 replications). The dashed line is the nominal 5% level. Active networks are Poisson [d = 8] and power-law [γ = 2.2].
+349 Supplementary Figure S2.  Two-sided Moran I p-value histograms at[n = 200]. Values lie in [0, 1]. The vertical line is [α = 0.05]. Top row: null DGP. Bottom row: two-network DGP.
+351 Supplementary Figure S3.  Size and power at[n = 100].
+353 Supplementary Figure S4.  Size and power at[n = 500]. Power for the two active networks is essentially one.
+355 Supplementary Figure S5.  Predicted versus actual Y on a 20% node holdout (first replication). The line is predicted = actual.
+357 Supplementary Figure S6.  Mean test RMSE by model across 30 replications. Axis labels match Table 5.
+359 Supplementary Figure S7.  Predicted versus actual monthly return, August 2026 holdout. The line is predicted = actual.
+361 Supplementary Figure S8.  Average holdout RMSE by model, June 2021–August 2026.
+363 Supplementary Figure S9. Boston tract centroids in WGS84 UTM zone 19N. The left panel colors the 506 centroids by municipal code. The StatLib file does not contain digitized town polygons, so legal boundaries are not drawn. The right panel 
+364 References
+365 Benjamini, Y., & Hochberg, Y. (1995). Controlling the false discovery rate: A practical and powerful approach to multiple testing. Journal of the Royal Statistical Society: Series B (Methodological), 57(1), 289–300.
+366 Cliff, A. D., & Ord, J. K. (1973). Spatial Autocorrelation. Pion, London.
+367 Cliff, A. D., & Ord, J. K. (1981). Spatial Processes: Models & Applications. Pion, London.
+368 Diebold, F. X., & Mariano, R. S. (1995). Comparing predictive accuracy. Journal of Business & Economic Statistics, 13(3), 253–263.
+369 Haario, H., Saksman, E., & Tamminen, J. (2001). An adaptive Metropolis algorithm. Bernoulli, 7(2), 223–242.
+370 Hastings, W. K. (1970). Monte Carlo sampling methods using Markov chains and their applications. Biometrika, 57(1), 97–109.
+371 Kelejian, H. H., & Prucha, I. R. (2001). On the asymptotic distribution of the Moran I test statistic with applications. Journal of Econometrics, 104(2), 219–257.
+372 LeSage, J. P., & Pace, R. K. (2009). Introduction to Spatial Econometrics. CRC Press, Boca Raton.
+373 Metropolis, N., Rosenbluth, A. W., Rosenbluth, M. N., Teller, A. H., & Teller, E. (1953). Equation of state calculations by fast computing machines. The Journal of Chemical Physics, 21(6), 1087–1092.
+374 Newey, W. K., & West, K. D. (1987). A simple, positive semi-definite, heteroskedasticity and autocorrelation consistent covariance matrix. Econometrica, 55(3), 703–708.
+375 Roberts, G. O., & Rosenthal, J. S. (2009). Examples of adaptive MCMC. Journal of Computational and Graphical Statistics, 18(2), 349–367.
+376 Roberts, G. O., Gelman, A., & Gilks, W. R. (1997). Weak convergence and optimal scaling of random walk Metropolis algorithms. The Annals of Applied Probability, 7(1), 110–120.

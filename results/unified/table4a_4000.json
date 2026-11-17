@@ -1,0 +1,113 @@
+{
+  "R": 200,
+  "n": 200,
+  "n_iter": 4000,
+  "burn": 2000,
+  "n_chains": 4,
+  "elapsed_sec": 505.16335821151733,
+  "lambda": [
+    {
+      "parameter": "Poisson d=8",
+      "truth": 0.4,
+      "bias": -0.09526591968814438,
+      "rmse": 0.1378515016005413,
+      "rmse_mcse": 0.005658908173685221,
+      "coverage": 0.895,
+      "coverage_mcse": 0.021676600286945368
+    },
+    {
+      "parameter": "Power-law gamma=2.2",
+      "truth": 0.35,
+      "bias": -0.0565617989961473,
+      "rmse": 0.0980478126696891,
+      "rmse_mcse": 0.004853211086271359,
+      "coverage": 0.925,
+      "coverage_mcse": 0.01862458053218917
+    },
+    {
+      "parameter": "Power-law gamma=2.5",
+      "truth": 0.0,
+      "bias": -0.0018686619692216354,
+      "rmse": 0.0649908471659111,
+      "rmse_mcse": 0.003320865245264008,
+      "coverage": 0.99,
+      "coverage_mcse": 0.007035623639735147
+    },
+    {
+      "parameter": "Power-law gamma=3.0",
+      "truth": 0.0,
+      "bias": -0.0024980554523777745,
+      "rmse": 0.06492556497463364,
+      "rmse_mcse": 0.0036044063264647967,
+      "coverage": 0.97,
+      "coverage_mcse": 0.012062338081814825
+    },
+    {
+      "parameter": "Poisson d=4 (null)",
+      "truth": 0.0,
+      "bias": -0.006952511681835687,
+      "rmse": 0.0768942420598947,
+      "rmse_mcse": 0.004866768551151632,
+      "coverage": 0.955,
+      "coverage_mcse": 0.014658615214269054
+    }
+  ],
+  "beta": [
+    {
+      "parameter": "intercept",
+      "truth": 0.1,
+      "bias": 0.00736835560270199,
+      "rmse": 0.30988400529063365,
+      "rmse_mcse": 0.016457022446655867,
+      "coverage": 0.91,
+      "coverage_mcse": 0.02023610634484806
+    },
+    {
+      "parameter": "x1",
+      "truth": -0.2,
+      "bias": 0.00535289813094241,
+      "rmse": 0.07593143302092824,
+      "rmse_mcse": 0.003935220119401272,
+      "coverage": 0.94,
+      "coverage_mcse": 0.01679285562374667
+    },
+    {
+      "parameter": "x2",
+      "truth": 0.4,
+      "bias": -0.001384417090661828,
+      "rmse": 0.06557701013688574,
+      "rmse_mcse": 0.002784367855313671,
+      "coverage": 0.97,
+      "coverage_mcse": 0.012062338081814825
+    },
+    {
+      "parameter": "x3",
+      "truth": -0.1,
+      "bias": -0.004233579676469679,
+      "rmse": 0.07368406047091812,
+      "rmse_mcse": 0.003470316764619261,
+      "coverage": 0.94,
+      "coverage_mcse": 0.01679285562374667
+    },
+    {
+      "parameter": "x4",
+      "truth": 0.25,
+      "bias": -0.00479639560565969,
+      "rmse": 0.07432918481081485,
+      "rmse_mcse": 0.004501843817216354,
+      "coverage": 0.955,
+      "coverage_mcse": 0.014658615214269054
+    },
+    {
+      "parameter": "x5",
+      "truth": 0.15,
+      "bias": -0.0017591573011548779,
+      "rmse": 0.06834062248231748,
+      "rmse_mcse": 0.0034991070675496573,
+      "coverage": 0.96,
+      "coverage_mcse": 0.013856406460551024
+    }
+  ],
+  "rhat_max": 1.102523826517314,
+  "adapt_covariance": true
+}

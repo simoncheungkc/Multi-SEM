@@ -1,0 +1,66 @@
+{
+  "true_beta": [
+    0.1,
+    -0.2,
+    0.4,
+    -0.1,
+    0.25,
+    0.15
+  ],
+  "true_lambda": [
+    0.4,
+    0.35,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "network_spec": [
+    [
+      "Poisson d=8",
+      "poisson",
+      {
+        "mean_degree": 8.0
+      }
+    ],
+    [
+      "Power-law gamma=2.2",
+      "powerlaw",
+      {
+        "gamma": 2.2
+      }
+    ],
+    [
+      "Power-law gamma=2.5",
+      "powerlaw",
+      {
+        "gamma": 2.5
+      }
+    ],
+    [
+      "Power-law gamma=3.0",
+      "powerlaw",
+      {
+        "gamma": 3.0
+      }
+    ],
+    [
+      "Poisson d=4 (null)",
+      "poisson",
+      {
+        "mean_degree": 4.0
+      }
+    ]
+  ],
+  "moran_selected_on_recovery": [
+    "Poisson d=8",
+    "Power-law gamma=2.2"
+  ],
+  "recovery_pvalues": {
+    "Poisson d=8": 0.004517975704786847,
+    "Power-law gamma=2.2": 6.974023290284848e-05,
+    "Power-law gamma=2.5": 0.9155298223419515,
+    "Power-law gamma=3.0": 0.21568906853246617,
+    "Poisson d=4 (null)": 0.11632654567253442
+  },
+  "elapsed_sec": 207.30123448371887
+}

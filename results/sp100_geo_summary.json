@@ -1,0 +1,59 @@
+{
+  "n_months": 63,
+  "geo_months": 8,
+  "mean_rmse": {
+    "OLS_RMSE": 0.06845490910618714,
+    "GeoSEM_RMSE": 0.06948014474892755,
+    "SectorSEM_RMSE": 0.06701132506026505,
+    "IndustrySEM_RMSE": 0.06608261898553447,
+    "CorrSEM_RMSE": 0.0665976669073335,
+    "BoostSEM_RMSE": 0.06592018896238755,
+    "Multi4_RMSE": 0.0657253894750047,
+    "Multi5_RMSE": 0.06593529965232212
+  },
+  "mean_mae": {
+    "OLS_MAE": 0.05171222061906565,
+    "GeoSEM_MAE": 0.052213666234961945,
+    "Multi4_MAE": 0.049378032295491536,
+    "Multi5_MAE": 0.04941708442377774
+  },
+  "geo_vs_ols": {
+    "months": 63,
+    "wins": 22,
+    "ties": 0,
+    "sign_pvalue": 0.022574972673257185,
+    "mean_rmse_differential": -0.001025235642740405,
+    "newey_west_lag": 3,
+    "newey_west_stat": -2.4017366301246557,
+    "newey_west_pvalue": 0.016317451725671894
+  },
+  "multi5_vs_ols": {
+    "months": 63,
+    "wins": 31,
+    "ties": 18,
+    "sign_pvalue": 0.016094360031274842,
+    "mean_rmse_differential": 0.0025196094538650154,
+    "newey_west_lag": 3,
+    "newey_west_stat": 3.110335574298605,
+    "newey_west_pvalue": 0.0018687490584989863
+  },
+  "multi4_vs_ols": {
+    "months": 63,
+    "wins": 32,
+    "ties": 19,
+    "sign_pvalue": 0.003657766827927844,
+    "mean_rmse_differential": 0.002729519631182429,
+    "newey_west_lag": 3,
+    "newey_west_stat": 3.4418277795643304,
+    "newey_west_pvalue": 0.0005777979814189926
+  },
+  "paired_t_multi5": {
+    "statistic": 3.300844097224597,
+    "pvalue": 0.00160163137872407
+  },
+  "paired_t_geo": {
+    "statistic": -2.4161722323237713,
+    "pvalue": 0.01864308330321106
+  },
+  "elapsed_sec": 8.567070245742798
+}

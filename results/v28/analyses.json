@@ -1,0 +1,289 @@
+{
+  "jacobian": "(1-k) ln L + ln(1-L)",
+  "rho": {
+    "reps": 200,
+    "rho_mean": 0.6934928328276853,
+    "rho_max": 0.7410805067689934,
+    "rho_lt_1": 200
+  },
+  "connectivity": {
+    "connected_clusters": 9,
+    "clusters": [
+      {
+        "cluster": 0,
+        "n": 44,
+        "components": 1,
+        "largest": 44,
+        "connected": true
+      },
+      {
+        "cluster": 1,
+        "n": 26,
+        "components": 1,
+        "largest": 26,
+        "connected": true
+      },
+      {
+        "cluster": 2,
+        "n": 117,
+        "components": 1,
+        "largest": 117,
+        "connected": true
+      },
+      {
+        "cluster": 3,
+        "n": 37,
+        "components": 1,
+        "largest": 37,
+        "connected": true
+      },
+      {
+        "cluster": 4,
+        "n": 64,
+        "components": 2,
+        "largest": 53,
+        "connected": false
+      },
+      {
+        "cluster": 5,
+        "n": 30,
+        "components": 1,
+        "largest": 30,
+        "connected": true
+      },
+      {
+        "cluster": 6,
+        "n": 34,
+        "components": 1,
+        "largest": 34,
+        "connected": true
+      },
+      {
+        "cluster": 7,
+        "n": 10,
+        "components": 1,
+        "largest": 10,
+        "connected": true
+      },
+      {
+        "cluster": 8,
+        "n": 61,
+        "components": 1,
+        "largest": 61,
+        "connected": true
+      },
+      {
+        "cluster": 9,
+        "n": 83,
+        "components": 1,
+        "largest": 83,
+        "connected": true
+      }
+    ]
+  },
+  "showcase_date": "2026-08-31",
+  "sp_priors": {
+    "bh_on_full_sample": true,
+    "names": [
+      "Sector affiliation",
+      "Industry (related companies)"
+    ],
+    "gaussian": {
+      "mean_L": 0.4304149389109347,
+      "L_0.95": 0.6613949323924728,
+      "p_L_gt_095": 0.0,
+      "lambda_mean": [
+        0.20626831964560471,
+        0.18566601586693912
+      ],
+      "lambda_lo": [
+        -0.19104698549338192,
+        -0.052795943075892235
+      ],
+      "lambda_hi": [
+        0.5427847138769333,
+        0.41644267564586956
+      ],
+      "acceptance": [
+        0.35125,
+        0.358625,
+        0.3515,
+        0.393125
+      ],
+      "names": [
+        "Sector affiliation",
+        "Industry (related companies)"
+      ],
+      "holdout": {
+        "rmse": 0.057827242248502005,
+        "mae": 0.04484398585944657,
+        "cover90": 0.95,
+        "cover95": 0.95,
+        "width95": 0.28250226977013493,
+        "crps": 0.03275818060424206
+      }
+    },
+    "beta_l1": {
+      "mean_L": 0.31767683126691565,
+      "L_0.95": 0.5719431875923535,
+      "p_L_gt_095": 0.0,
+      "lambda_mean": [
+        0.13206932696378804,
+        0.15167870894345542
+      ],
+      "lambda_lo": [
+        -0.1354188729542788,
+        -0.049666163788296934
+      ],
+      "lambda_hi": [
+        0.46897237233950984,
+        0.39176484656573696
+      ],
+      "acceptance": [
+        0.351875,
+        0.3515,
+        0.35,
+        0.402875
+      ],
+      "names": [
+        "Sector affiliation",
+        "Industry (related companies)"
+      ],
+      "holdout": {
+        "rmse": 0.059203983927787356,
+        "mae": 0.04624759168423976,
+        "cover90": 0.95,
+        "cover95": 0.95,
+        "width95": 0.2872677251243039,
+        "crps": 0.03349981559186528
+      }
+    },
+    "training_screen": {
+      "regime": "fallback_p_lt_0.10",
+      "names": [
+        "Sector affiliation",
+        "Industry (related companies)"
+      ],
+      "pvalues": {
+        "Correlation (5-NN)": 0.7783737541330669,
+        "Boosted correlation resolvent": 0.8783973471155218,
+        "Sector affiliation": 0.06214093000508636,
+        "Industry (related companies)": 0.02771013362007846
+      },
+      "lambda_mean": [
+        0.20961893235856818,
+        0.1821829093339758
+      ],
+      "holdout_rmse": 0.05761221423084078,
+      "holdout_mae": 0.04451623424235841,
+      "ols_rmse": 0.06374367841593347
+    }
+  },
+  "bh_months": {
+    "months": 63,
+    "bh": {
+      "months": 45,
+      "ols_rmse": 0.07099408944640163,
+      "multi_rmse": 0.0669677467740647
+    },
+    "fallback": {
+      "months": 18,
+      "ols_rmse": 0.06210695825565073,
+      "multi_rmse": 0.06165501958340082
+    }
+  },
+  "boston_beta": {
+    "mean_L": 0.836241023586697,
+    "L_0.95": 0.9002652601519273,
+    "p_L_gt_095": 0.0089375,
+    "lambda_mean": [
+      0.17407985642790447,
+      0.43556957343844815,
+      0.22171605936990482
+    ],
+    "lambda_lo": [
+      -0.03543087336119276,
+      0.06663208298692498,
+      0.10211805549894365
+    ],
+    "lambda_hi": [
+      0.5083841417714782,
+      0.7006474412734344,
+      0.3333054285993636
+    ],
+    "acceptance": [
+      0.330375,
+      0.36425,
+      0.327125,
+      0.3435
+    ],
+    "names": [
+      "geo",
+      "resolvent",
+      "town"
+    ],
+    "holdout": {
+      "rmse": 0.13452751775711902,
+      "mae": 0.09267936635798528,
+      "cover90": 0.9108910891089109,
+      "cover95": 0.9702970297029703,
+      "width95": 0.5323522988777791,
+      "crps": 0.06952748451487203
+    }
+  },
+  "boston_priors": {
+    "gaussian": {
+      "mean_L": 0.8523264703558902,
+      "L_0.95": 0.9476801106760819,
+      "p_L_gt_095": 0.048625,
+      "lambda_mean": [
+        0.1605277425282848,
+        0.45806305003136316,
+        0.2223823555805752
+      ],
+      "lambda_lo": [
+        -0.059323069665826025,
+        0.07880174547015725,
+        0.10542674828201623
+      ],
+      "lambda_hi": [
+        0.5041960430071887,
+        0.7411336868457709,
+        0.3418567676363966
+      ],
+      "holdout": {
+        "rmse": 0.1346644398683969,
+        "crps": 0.06950365420103044
+      }
+    },
+    "beta_l1": {
+      "mean_L": 0.836241023586697,
+      "L_0.95": 0.9002652601519273,
+      "p_L_gt_095": 0.0089375,
+      "lambda_mean": [
+        0.17407985642790447,
+        0.43556957343844815,
+        0.22171605936990482
+      ],
+      "lambda_lo": [
+        -0.03543087336119276,
+        0.06663208298692498,
+        0.10211805549894365
+      ],
+      "lambda_hi": [
+        0.5083841417714782,
+        0.7006474412734344,
+        0.3333054285993636
+      ],
+      "holdout": {
+        "rmse": 0.13452751775711902,
+        "mae": 0.09267936635798528,
+        "cover90": 0.9108910891089109,
+        "cover95": 0.9702970297029703,
+        "width95": 0.5323522988777791,
+        "crps": 0.06952748451487203
+      },
+      "refit_mean_L": 0.836241023586697
+    }
+  }
+}
